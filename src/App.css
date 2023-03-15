@@ -1,3 +1,34 @@
-.App {
-  display: block;
+.flex {
+  display: flex;
+}
+
+.flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.flex-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.flex-evenly {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+.sm-screen { display: none; }
+
+.hide { display: none !important; }
+
+@media screen and (max-width: 768px) {
+  .lg-screen { display: none; }
+  .sm-screen { display: flex !important; }
 }

@@ -1,7 +1,10 @@
 import React from 'react';
+import Topbar from '../../components/topbar/Topbar';
 
 const Home = () => (
-  <div>Home</div>
+  <div>
+    <Topbar />
+  </div>
 );
 
 export default Home;

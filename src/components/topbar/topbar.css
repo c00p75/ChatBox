@@ -1,0 +1,165 @@
+.app_navigation {
+  background-color: dodgerblue;
+}
+
+.app__topbar {
+  height: 4em;
+  display: flex;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  padding: 0 1em;
+}
+
+.app__topbar-left__logo-text {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  line-height: 0.7em;
+}
+
+.app__topbar-left__logo-text img {
+  width: 2em;
+  position: absolute;
+  z-index: 0;
+  top: -0.25em;
+  left: 35%;
+}
+
+.app__topbar-left__logo-text span {
+  z-index: 1;
+}
+
+.app__topbar-left {
+  flex: 3;
+}
+
+.app__topbar-center {
+  flex: 4;
+  background-color: white;
+  height: 60%;
+  border-radius: 15px;
+  padding: 0.5em;
+  gap: 1em;
+}
+
+.app__topbar-center_searchInput {
+  width: 100%;
+  border: none;
+  outline: none;
+}
+
+.app__topbar-right {
+  flex: 5;
+  justify-content: end;
+  color: white;
+}
+
+.app__topbar ul {
+  display: flex;
+  list-style: none;
+  align-items: center;
+}
+
+.app__topbar-right_links { gap: 1.5em; }
+
+.app__topbar-right_icons { gap: 0.8em; }
+
+.app__topbar-right_icon { position: relative; }
+
+.app__topbar-right_icon svg { font-size: 1.4em; }
+
+.app__topbar-right_iconBadge {
+  position: absolute;
+  top: -0.5em;
+  right: -0.5em;
+  width: 1em;
+  height: 1em;
+  background-color: red;
+  border-radius: 50%;
+  font-size: 0.8em;
+  padding: 0.65em;
+}
+
+.app__topbar-right_img img {
+  width: 3em;
+  height: 3em;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.app__topbar-right_link-menu {
+  display: none;
+}
+
+@media screen and (max-width: 768px) {
+  .app__topbar-left {
+    flex: 2;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .app__topbar-left__logo-text {
+    font-size: 1.5em;
+  }
+
+  .app__topbar-left {
+    flex: 1;
+  }
+
+  .app__topbar-center {
+    display: none;
+  }
+
+  .app__topbar-right_link:has(.app__topbar-right_icons) {
+    display: none;
+  }
+
+  .app__topbar-right_link-menu {
+    display: flex !important;
+  }
+
+  .app__topbar-right_link-menu button {
+    display: flex !important;
+    background: none;
+    color: white;
+    border: none;
+    font-size: 1.3em;
+    width: 100%;
+    height: 100%;
+  }
+
+  .app__topbar-bottom {
+    z-index: -1;
+    border-top: 1px solid lightsteelblue;
+    padding: 2em;
+    display: flex;
+    flex-direction: column;
+    gap: 2em;
+    transition: 0.5s ease;
+  }
+
+  .app__topbar-bottom .app__topbar-center {
+    display: flex !important;
+  }
+
+  .app__topbar-bottom_icons {
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    gap: 1em;
+  }
+
+  .app__topbar-bottom_icons li {
+    color: white;
+    display: flex;
+    align-items: center;
+  }
+
+  .app__topbar-right_iconBadge {
+    position: relative;
+    margin-left: 1em;
+    top: 0;
+    left: 0;
+  }
+}
