@@ -1,3 +1,13 @@
+::-webkit-scrollbar {
+  width: 10px;
+  border-bottom-right-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: gainsboro;
+  border-radius: 5px;
+}
+
 .flex {
   display: flex;
 }
@@ -27,6 +37,17 @@
 .sm-screen { display: none; }
 
 .hide { display: none !important; }
+
+.small-profile-pic {
+  width: 3em;
+  height: 3em;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.slider {
+  left: 100% !important;
+}
 
 @media screen and (max-width: 768px) {
   .lg-screen { display: none; }
