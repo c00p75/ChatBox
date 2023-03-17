@@ -1,8 +1,10 @@
 .app_navigation {
   background-color: dodgerblue;
+  position: sticky;
+  top: 0;
 }
 
-.app__topbar {
+.home__topbar {
   height: 4em;
   display: flex;
   align-items: center;
@@ -11,14 +13,14 @@
   padding: 0 1em;
 }
 
-.app__topbar-left__logo-text {
+.home__topbar-left__logo-text {
   position: relative;
   display: flex;
   flex-direction: column;
   line-height: 0.7em;
 }
 
-.app__topbar-left__logo-text img {
+.home__topbar-left__logo-text img {
   width: 2em;
   position: absolute;
   z-index: 0;
@@ -26,15 +28,15 @@
   left: 35%;
 }
 
-.app__topbar-left__logo-text span {
+.home__topbar-left__logo-text span {
   z-index: 1;
 }
 
-.app__topbar-left {
+.home__topbar-left {
   flex: 3;
 }
 
-.app__topbar-center {
+.home__topbar-center {
   flex: 4;
   background-color: white;
   height: 60%;
@@ -43,33 +45,33 @@
   gap: 1em;
 }
 
-.app__topbar-center_searchInput {
+.home__topbar-center_searchInput {
   width: 100%;
   border: none;
   outline: none;
 }
 
-.app__topbar-right {
+.home__topbar-right {
   flex: 5;
   justify-content: end;
   color: white;
 }
 
-.app__topbar ul {
+.home__topbar ul {
   display: flex;
   list-style: none;
   align-items: center;
 }
 
-.app__topbar-right_links { gap: 1.5em; }
+.home__topbar-right_links { gap: 1.5em; }
 
-.app__topbar-right_icons { gap: 0.8em; }
+.home__topbar-right_icons { gap: 0.8em; }
 
-.app__topbar-right_icon { position: relative; }
+.home__topbar-right_icon { position: relative; }
 
-.app__topbar-right_icon svg { font-size: 1.4em; }
+.home__topbar-right_icon svg { font-size: 1.4em; }
 
-.app__topbar-right_iconBadge {
+.home__topbar-right_iconBadge {
   position: absolute;
   top: -0.5em;
   right: -0.5em;
@@ -81,45 +83,40 @@
   padding: 0.65em;
 }
 
-.app__topbar-right_img img {
-  width: 3em;
-  height: 3em;
-  border-radius: 50%;
-  object-fit: cover;
-}
-
-.app__topbar-right_link-menu {
+.home__topbar-right_link-menu {
   display: none;
 }
 
+.home__topbar-bottom { display: none; }
+
 @media screen and (max-width: 768px) {
-  .app__topbar-left {
+  .home__topbar-left {
     flex: 2;
   }
 }
 
 @media screen and (max-width: 576px) {
-  .app__topbar-left__logo-text {
+  .home__topbar-left__logo-text {
     font-size: 1.5em;
   }
 
-  .app__topbar-left {
+  .home__topbar-left {
     flex: 1;
   }
 
-  .app__topbar-center {
+  .home__topbar-center {
     display: none;
   }
 
-  .app__topbar-right_link:has(.app__topbar-right_icons) {
+  .home__topbar-right_link:has(.home__topbar-right_icons) {
     display: none;
   }
 
-  .app__topbar-right_link-menu {
+  .home__topbar-right_link-menu {
     display: flex !important;
   }
 
-  .app__topbar-right_link-menu button {
+  .home__topbar-right_link-menu button {
     display: flex !important;
     background: none;
     color: white;
@@ -129,37 +126,63 @@
     height: 100%;
   }
 
-  .app__topbar-bottom {
+  .home__topbar-bottom {
+    position: fixed;
+    height: 100%;
+    background-color: dodgerblue;
     z-index: -1;
+    top: 4em;
+    left: 0;
+    right: 0;
     border-top: 1px solid lightsteelblue;
     padding: 2em;
     display: flex;
     flex-direction: column;
     gap: 2em;
     transition: 0.5s ease;
+    overflow: auto;
   }
 
-  .app__topbar-bottom .app__topbar-center {
+  .home__topbar-bottom::-webkit-scrollbar {
+    width: 0;
+    border-bottom-right-radius: 5px;
+  }
+
+  .home__topbar-bottom_link {
+    flex-direction: column;
+    gap: 1em;
+    color: white;
+  }
+
+  .home__topbar-bottom .home__topbar-center {
     display: flex !important;
   }
 
-  .app__topbar-bottom_icons {
+  .home__topbar-bottom_icons {
     display: flex;
     flex-direction: column;
     list-style: none;
     gap: 1em;
   }
 
-  .app__topbar-bottom_icons li {
+  .home__topbar-bottom_icons li {
     color: white;
     display: flex;
     align-items: center;
   }
 
-  .app__topbar-right_iconBadge {
+  .home__topbar-right_iconBadge {
     position: relative;
     margin-left: 1em;
     top: 0;
     left: 0;
+  }
+
+  .home__sidebar {
+    display: flex !important;
+  }
+
+  .home__sidebar-list {
+    overflow: auto;
   }
 }

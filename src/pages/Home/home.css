@@ -1,1 +1,3 @@
-* { opacity: 1; }
+.app__homeContainer {
+  width: 100%;
+}
