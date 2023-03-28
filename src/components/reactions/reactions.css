@@ -1,0 +1,148 @@
+
+.reactions__wrapper {
+  display: none;
+  position: absolute;
+  z-index: 2;
+  top: -4.2em;
+  transition: 0.3s ease;
+}
+
+.reactions__container {
+  position: relative;
+  margin-right: 2em;
+  width: 100%;
+}
+
+.reactions-button {
+  font-size: 2em;
+  color: orange;
+}
+
+.reactions__wrapper:hover,
+.reactions__wrapper:focus,
+.reactions__button-container:hover ~ .reactions__wrapper,
+.reactions__button-container:focus ~ .reactions__wrapper {
+  display: flex;
+}
+
+.reactions__button-container:hover {
+  width: 100%;
+  z-index: 2;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.reactions__wrapper-show {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.reactions {
+  align-items: center;
+  justify-content: space-between;
+  height: 4.5em;
+  width: 20em;
+  padding: 0 3em 0 1.5em;
+  border-radius: 10px;
+  -webkit-box-shadow: 0 0 16px -8px rgba(0, 0, 0);
+  -moz-box-shadow: 0 0 16px -8px rgba(0, 0, 0);
+  box-shadow: 0 0 16px -8px rgba(0, 0, 0);
+  background-color: white;
+}
+
+.reactions__reaction {
+  align-items: center;
+  gap: 1em;
+  position: relative;
+  display: flex;
+}
+
+.reactions__reaction button {
+  border: none;
+  background: none;
+}
+
+.replies__header-left {
+  align-items: center;
+  width: 100%;
+}
+
+.reactions__reaction-image {
+  position: relative;
+}
+
+.reactions__reaction-count {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: aliceblue;
+  font-size: small;
+  font-weight: 600;
+  color: darkslategray;
+  z-index: 3;
+  width: 0.5em;
+  height: 0.5em;
+  border-radius: 50%;
+  padding: 0.5em;
+  top: 0.5em;
+  left: -0.5em;
+}
+
+.reactions__reaction-image img {
+  position: absolute;
+  inset: 0;
+  cursor: pointer;
+  z-index: 2;
+}
+
+.reactions__reaction-image_static:hover {
+  opacity: 0;
+}
+
+.like-reaction img {
+  width: 4em;
+  top: -2em;
+  left: -1em;
+}
+
+.love-reaction img {
+  width: 3em;
+  top: -1.5em;
+  left: -1em;
+}
+
+.sad-reaction img {
+  width: 1.7em;
+  top: -0.7em;
+}
+
+.laugh-reaction img {
+  width: 2.2em;
+  top: -0.8em;
+}
+
+.angry-reaction img {
+  width: 1.8em;
+  top: -0.7em;
+}
+
+.wow-reaction img {
+  width: 2.05em;
+  top: -0.7em;
+}
+
+.reactionCounter {
+  position: absolute;
+  top: 0;
+  left: 3em;
+  width: max-content;
+  font-size: smaller;
+  height: 100%;
+}
+
+.reaction-selected {
+  background-color: darkslategray;
+  padding: 0.8em;
+  color: white;
+}

@@ -1,0 +1,87 @@
+.home__sidebar {
+  flex: 3;
+  height: calc(100vh - 4em);
+  overflow: auto;
+  border-right: 1px solid gainsboro;
+  position: sticky;
+  top: 4em;
+}
+
+.home__sidebar::-webkit-scrollbar {
+  width: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+.home__sidebar::-webkit-scrollbar-thumb {
+  background: gainsboro;
+  border-radius: 5px;
+}
+
+.home__sidebar-wrapper {
+  padding: 1em 2em;
+  flex-direction: column;
+  gap: 2em;
+}
+
+.home__sidebar-list {
+  flex-direction: column;
+  gap: 1.65em;
+  list-style: none;
+}
+
+.home__sidebar-listItem {
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+  cursor: pointer;
+}
+
+.home__sidebar-button {
+  background: none;
+  border: none;
+  box-shadow: 0 1px 2px 0 black;
+  border-radius: 5px;
+  outline: none;
+  padding: 0.5em;
+  gap: 1em;
+}
+
+.home__sidebar-more {
+  flex-direction: column;
+  gap: 1em;
+}
+
+.home__sidebar-more h3 {
+  color: darkcyan;
+  text-align: center;
+}
+
+.home__sidebar-friendList {
+  gap: 1em;
+  flex-direction: column;
+}
+
+.home__sidebar-friend {
+  align-items: center;
+  gap: 1em;
+}
+
+.home__sidebar-icon {
+  transition: all 0.5s ease;
+  font-size: 1.5em;
+}
+
+.home__sidebar-icon_showless {
+  transform: rotate(180deg);
+  transition: 0.3s ease;
+}
+
+@media screen and (max-width: 768px) {
+  .home__sidebar-wrapper {
+    padding: 0.5em;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .home__sidebar { display: none !important; }
+}

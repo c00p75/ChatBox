@@ -1,7 +1,7 @@
 .app_navigation {
-  background-color: dodgerblue;
   position: sticky;
   top: 0;
+  z-index: 10;
 }
 
 .home__topbar {
@@ -129,7 +129,6 @@
   .home__topbar-bottom {
     position: fixed;
     height: 100%;
-    background-color: dodgerblue;
     z-index: -1;
     top: 4em;
     left: 0;

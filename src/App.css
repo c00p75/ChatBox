@@ -1,11 +1,45 @@
 ::-webkit-scrollbar {
   width: 10px;
-  border-bottom-right-radius: 5px;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: gainsboro;
-  border-radius: 5px;
+  background: darkgray;
+}
+
+:root {
+  --theme-color1: dodgerblue;
+  --theme-color2: lightseagreen;
+  --theme-color3: mediumvioletred;
+  --theme-color4: lightpink;
+}
+
+.theme-color1 {
+  background-color: var(--theme-color1);
+}
+
+.theme-color2 {
+  background-color: var(--theme-color2);
+  color: white;
+}
+
+.theme-color3 {
+  background-color: var(--theme-color3);
+  color: white;
+}
+
+.theme-color1 *,
+.theme-color2 *,
+.theme-color3 * {
+  color: white;
+}
+
+.theme-color4 {
+  background-color: var(--theme-color4);
+  color: white;
+}
+
+.theme-color4 * {
+  color: black;
 }
 
 .flex {
@@ -47,6 +81,13 @@
 
 .slider {
   left: 100% !important;
+}
+
+.btn-link {
+  background: none;
+  border: none;
+  font-weight: bold;
+  cursor: pointer;
 }
 
 @media screen and (max-width: 768px) {

@@ -2,147 +2,619 @@ import images from './images';
 
 const data = {
   userProfile: {
-    id: 1,
-    name: 'Amanda Sherif',
+    UserId: 1,
+    name: {
+      first: 'Imani',
+      last: 'Sherif',
+      fullName() { return (`${this.first} ${this.last}`); },
+    },
     online: false,
     profilePictureID: images.profilePicture1sm,
     posts: [
       {
-        id: 1,
-        body: 'lorem Ipsum',
-        likes: 4,
+        userId: 1,
+        postId: 1,
+        body: {
+          text: 'lorem Ipsum',
+          postImg: [],
+        },
+        reactions: {
+          like: 1,
+          sad: 0,
+          love: 0,
+          angry: 2,
+          wow: 4,
+          funny: 7,
+        },
+        comments: [
+          {
+            commentId: 1,
+            commentDate: new Date(2023, 2, 9, 11, 10, 0),
+            commenterId: 3,
+            commenterName() {
+              data.users.filter((i) => i.userId === this.commenterId)[0].name.fullName();
+            },
+            body: 'nice',
+            replies: [
+              {
+                userId: 2,
+                body: 'I agree',
+                commentReplyDate: new Date(2023, 2, 9, 11, 10, 0),
+              },
+            ],
+            reactions: {
+              like: 1,
+              sad: 0,
+              love: 0,
+              angry: 2,
+              wow: 4,
+              funny: 7,
+            },
+          },
+        ],
+        date: new Date(2023, 3, 19, 4, 40, 0),
       },
     ],
   },
 
   users: [
     {
-      id: 11,
-      name: "George M'sapenda",
-      online: false,
-      profilePictureID: images.profilePicture11sm,
-      posts: [
-        {
-          id: 1,
-          body: 'lorem Ipsum',
-          likes: 4,
-        },
-      ],
-    },
-    {
-      id: 2,
-      name: 'Bella Santon',
+      userId: 2,
+      name: {
+        first: 'Bella',
+        last: 'Santon',
+        fullName() { return (`${this.first} ${this.last}`); },
+      },
       online: false,
       profilePictureID: images.profilePicture2sm,
       posts: [
         {
-          id: 1,
-          body: 'lorem Ipsum',
-          likes: 4,
+          userId: 2,
+          postId: 1,
+          body: {
+            text: 'lorem Ipsum',
+            postImg: [],
+          },
+          reactions: {
+            like: 1,
+            sad: 0,
+            love: 0,
+            angry: 2,
+            wow: 4,
+            funny: 7,
+          },
+          comments: [
+            {
+              commentId: 1,
+              commentDate: new Date(2023, 2, 9, 11, 10, 0),
+              commenterId: 3,
+              commenterName() {
+                data.users.filter((i) => i.userId === this.commenterId)[0].name.fullName();
+              },
+              body: 'nice',
+              replies: [
+                {
+                  userId: 2,
+                  body: 'I agree',
+                  commentReplyDate: new Date(2023, 2, 9, 11, 10, 0),
+                },
+              ],
+              reactions: {
+                like: 1,
+                sad: 0,
+                love: 0,
+                angry: 2,
+                wow: 4,
+                funny: 7,
+              },
+            },
+          ],
+          date: new Date(2023, 3, 19, 4, 40, 0),
         },
       ],
     },
     {
-      id: 3,
-      name: 'Jake Musa',
+      userId: 3,
+      name: {
+        first: 'Jake',
+        last: 'Musa',
+        fullName() { return (`${this.first} ${this.last}`); },
+      },
       online: false,
       profilePictureID: images.profilePicture3sm,
       posts: [
         {
-          id: 1,
-          body: 'lorem Ipsum',
-          likes: 4,
+          userId: 3,
+          postId: 1,
+          body: {
+            text: 'lorem Ipsum',
+            postImg: [],
+          },
+          reactions: {
+            like: 1,
+            sad: 0,
+            love: 0,
+            angry: 2,
+            wow: 4,
+            funny: 7,
+          },
+          comments: [
+            {
+              commentId: 1,
+              commentDate: new Date(2023, 2, 9, 11, 10, 0),
+              commenterId: 3,
+              commenterName() {
+                data.users.filter((i) => i.userId === this.commenterId)[0].name.fullName();
+              },
+              body: 'nice',
+              replies: [
+                {
+                  userId: 2,
+                  body: 'I agree',
+                  commentReplyDate: new Date(2023, 2, 9, 11, 10, 0),
+                },
+              ],
+              reactions: {
+                like: 1,
+                sad: 0,
+                love: 0,
+                angry: 2,
+                wow: 4,
+                funny: 7,
+              },
+            },
+          ],
+          date: new Date(2023, 3, 19, 4, 40, 0),
         },
       ],
     },
     {
-      id: 4,
-      name: 'Carlos Moralez',
+      userId: 4,
+      name: {
+        first: 'Carlos',
+        last: 'Moralez',
+        fullName() { return (`${this.first} ${this.last}`); },
+      },
       online: false,
       profilePictureID: images.profilePicture4sm,
       posts: [
         {
-          id: 1,
-          body: 'lorem Ipsum',
-          likes: 4,
+          userId: 4,
+          postId: 1,
+          body: {
+            text: 'lorem Ipsum',
+            postImg: [],
+          },
+          reactions: {
+            like: 1,
+            sad: 0,
+            love: 0,
+            angry: 2,
+            wow: 4,
+            funny: 7,
+          },
+          comments: [
+            {
+              commentId: 1,
+              commentDate: new Date(2023, 2, 9, 11, 10, 0),
+              commenterId: 3,
+              commenterName() {
+                data.users.filter((i) => i.userId === this.commenterId)[0].name.fullName();
+              },
+              body: 'nice',
+              replies: [
+                {
+                  userId: 2,
+                  body: 'I agree',
+                  commentReplyDate: new Date(2023, 2, 9, 11, 10, 0),
+                },
+              ],
+              reactions: {
+                like: 1,
+                sad: 0,
+                love: 0,
+                angry: 2,
+                wow: 4,
+                funny: 7,
+              },
+            },
+          ],
+          date: new Date(2023, 3, 19, 4, 40, 0),
         },
       ],
     },
     {
-      id: 5,
-      name: 'Chan Evans',
+      userId: 5,
+      name: {
+        first: 'Chan',
+        last: 'Evans',
+        fullName() { return (`${this.first} ${this.last}`); },
+      },
       online: false,
       profilePictureID: images.profilePicture5sm,
       posts: [
         {
-          id: 1,
-          body: 'lorem Ipsum',
-          likes: 4,
+          userId: 5,
+          postId: 1,
+          body: {
+            text: 'lorem Ipsum',
+            postImg: [],
+          },
+          reactions: {
+            like: 1,
+            sad: 0,
+            love: 0,
+            angry: 2,
+            wow: 4,
+            funny: 7,
+          },
+          comments: [
+            {
+              commentId: 1,
+              commentDate: new Date(2023, 2, 9, 11, 10, 0),
+              commenterId: 3,
+              commenterName() {
+                data.users.filter((i) => i.userId === this.commenterId)[0].name.fullName();
+              },
+              body: 'nice',
+              replies: [
+                {
+                  userId: 2,
+                  body: 'I agree',
+                  commentReplyDate: new Date(2023, 2, 9, 11, 10, 0),
+                },
+              ],
+              reactions: {
+                like: 1,
+                sad: 0,
+                love: 0,
+                angry: 2,
+                wow: 4,
+                funny: 7,
+              },
+            },
+          ],
+          date: new Date(2023, 3, 19, 4, 40, 0),
         },
       ],
     },
     {
-      id: 6,
-      name: 'Jonathan Collins',
+      userId: 6,
+      name: {
+        first: 'Jonathan',
+        last: 'Collins',
+        fullName() { return (`${this.first} ${this.last}`); },
+      },
       online: false,
       profilePictureID: images.profilePicture6sm,
       posts: [
         {
-          id: 1,
-          body: 'lorem Ipsum',
-          likes: 4,
+          userId: 6,
+          postId: 1,
+          body: {
+            text: "There's nothing quite like being in touch with mother nature. I was certianly born for the great out doors!!",
+            postImg: [images.picturePost1],
+          },
+          reactions: {
+            like: 62,
+            sad: 0,
+            love: 0,
+            angry: 2,
+            wow: 4,
+            funny: 7,
+          },
+          comments: [
+            {
+              commentId: 1,
+              commentDate: new Date(2023, 2, 9, 11, 10, 0),
+              commenterId: 3,
+              commenterName() {
+                data.users.filter((i) => i.userId === this.commenterId)[0].name.fullName();
+              },
+              body: 'nice',
+              replies: [
+                {
+                  userId: 2,
+                  body: 'I agree',
+                  commentReplyDate: new Date(2023, 2, 9, 11, 10, 0),
+                },
+                {
+                  userId: 4,
+                  body: 'Yeah, totaly!',
+                  commentReplyDate: new Date(2023, 2, 9, 11, 10, 0),
+                },
+              ],
+              reactions: {
+                like: 1,
+                sad: 0,
+                love: 0,
+                angry: 2,
+                wow: 4,
+                funny: 7,
+              },
+            },
+          ],
+          date: new Date(2023, 3, 19, 4, 40, 0),
         },
       ],
     },
     {
-      id: 7,
-      name: 'Mapalo Soka',
+      userId: 7,
+      name: {
+        first: 'Mapalo',
+        last: 'Soka',
+        fullName() { return (`${this.first} ${this.last}`); },
+      },
       online: false,
       profilePictureID: images.profilePicture7sm,
       posts: [
         {
-          id: 1,
-          body: 'lorem Ipsum',
-          likes: 4,
+          userId: 7,
+          postId: 1,
+          body: {
+            text: 'lorem Ipsum',
+            postImg: [],
+          },
+          reactions: {
+            like: 1,
+            sad: 0,
+            love: 0,
+            angry: 2,
+            wow: 4,
+            funny: 7,
+          },
+          comments: [
+            {
+              commentId: 1,
+              commentDate: new Date(2023, 2, 9, 11, 10, 0),
+              commenterId: 3,
+              commenterName() {
+                data.users.filter((i) => i.userId === this.commenterId)[0].name.fullName();
+              },
+              body: 'nice',
+              replies: [
+                {
+                  userId: 2,
+                  body: 'I agree',
+                  commentReplyDate: new Date(2023, 2, 9, 11, 10, 0),
+                },
+              ],
+              reactions: {
+                like: 1,
+                sad: 0,
+                love: 0,
+                angry: 2,
+                wow: 4,
+                funny: 7,
+              },
+            },
+          ],
+          date: new Date(2023, 3, 19, 4, 40, 0),
         },
       ],
     },
     {
-      id: 8,
-      name: 'Dominic Ross',
+      userId: 8,
+      name: {
+        first: 'Dominic',
+        last: 'Ross',
+        fullName() { return (`${this.first} ${this.last}`); },
+      },
       online: false,
       profilePictureID: images.profilePicture8sm,
       posts: [
         {
-          id: 1,
-          body: 'lorem Ipsum',
-          likes: 4,
+          userId: 8,
+          postId: 1,
+          body: {
+            text: 'lorem Ipsum',
+            postImg: [],
+          },
+          reactions: {
+            like: 1,
+            sad: 0,
+            love: 0,
+            angry: 2,
+            wow: 4,
+            funny: 7,
+          },
+          comments: [
+            {
+              commentId: 1,
+              commentDate: new Date(2023, 2, 9, 11, 10, 0),
+              commenterId: 3,
+              commenterName() {
+                data.users.filter((i) => i.userId === this.commenterId)[0].name.fullName();
+              },
+              body: 'nice',
+              replies: [
+                {
+                  userId: 2,
+                  body: 'I agree',
+                  commentReplyDate: new Date(2023, 2, 9, 11, 10, 0),
+                },
+              ],
+              reactions: {
+                like: 1,
+                sad: 0,
+                love: 0,
+                angry: 2,
+                wow: 4,
+                funny: 7,
+              },
+            },
+          ],
+          date: new Date(2023, 3, 19, 4, 40, 0),
         },
       ],
     },
     {
-      id: 9,
-      name: 'Sarah Moon',
+      userId: 9,
+      name: {
+        first: 'Sarah',
+        last: 'Moon',
+        fullName() { return (`${this.first} ${this.last}`); },
+      },
       online: false,
       profilePictureID: images.profilePicture9sm,
       posts: [
         {
-          id: 1,
-          body: 'lorem Ipsum',
-          likes: 4,
+          userId: 9,
+          postId: 1,
+          body: {
+            text: 'lorem Ipsum',
+            postImg: [],
+          },
+          reactions: {
+            like: 1,
+            sad: 0,
+            love: 0,
+            angry: 2,
+            wow: 4,
+            funny: 7,
+          },
+          comments: [
+            {
+              commentId: 1,
+              commentDate: new Date(2023, 2, 9, 11, 10, 0),
+              commenterId: 3,
+              commenterName() {
+                data.users.filter((i) => i.userId === this.commenterId)[0].name.fullName();
+              },
+              body: 'nice',
+              replies: [
+                {
+                  userId: 2,
+                  body: 'I agree',
+                  commentReplyDate: new Date(2023, 2, 9, 11, 10, 0),
+                },
+              ],
+              reactions: {
+                like: 1,
+                sad: 0,
+                love: 0,
+                angry: 2,
+                wow: 4,
+                funny: 7,
+              },
+            },
+          ],
+          date: new Date(2023, 3, 19, 4, 40, 0),
         },
       ],
     },
     {
-      id: 10,
-      name: 'Jaene Kunda',
+      userId: 10,
+      name: {
+        first: 'Jaene',
+        last: 'Kunda',
+        fullName() { return (`${this.first} ${this.last}`); },
+      },
       online: false,
       profilePictureID: images.profilePicture10sm,
       posts: [
         {
-          id: 1,
-          body: 'lorem Ipsum',
-          likes: 4,
+          userId: 10,
+          postId: 1,
+          body: {
+            text: 'lorem Ipsum',
+            postImg: [],
+          },
+          reactions: {
+            like: 1,
+            sad: 0,
+            love: 0,
+            angry: 2,
+            wow: 4,
+            funny: 7,
+          },
+          comments: [
+            {
+              commentId: 1,
+              commentDate: new Date(2023, 2, 9, 11, 10, 0),
+              commenterId: 3,
+              commenterName() {
+                data.users.filter((i) => i.userId === this.commenterId)[0].name.fullName();
+              },
+              body: 'nice',
+              replies: [
+                {
+                  userId: 2,
+                  body: 'I agree',
+                  commentReplyDate: new Date(2023, 2, 9, 11, 10, 0),
+                },
+              ],
+              reactions: {
+                like: 1,
+                sad: 0,
+                love: 0,
+                angry: 2,
+                wow: 4,
+                funny: 7,
+              },
+            },
+          ],
+          date: new Date(2023, 3, 19, 4, 40, 0),
+        },
+      ],
+    },
+    {
+      userId: 11,
+      name: {
+        first: 'George',
+        last: "M'sapenda",
+        fullName() { return (`${this.first} ${this.last}`); },
+      },
+      online: false,
+      profilePictureID: images.profilePicture11sm,
+      posts: [
+        {
+          userId: 11,
+          postId: 1,
+          body: {
+            text: 'It has been a couple of years since I attained my first degree. Crossing this milestone and many others that opened so many doors for me would not have happened without the blessing of family. I love you guys!',
+            postImg: [
+              images.picturePost8,
+              images.picturePost9,
+              images.picturePost6,
+              images.picturePost7,
+            ],
+          },
+          reactions: {
+            like: 1,
+            sad: 0,
+            love: 0,
+            angry: 2,
+            wow: 4,
+            funny: 7,
+          },
+          comments: [
+            {
+              commentId: 1,
+              commentDate: new Date(2023, 2, 9, 11, 10, 0),
+              commenterId: 3,
+              commenterName() {
+                data.users.filter((i) => i.userId === this.commenterId)[0].name.fullName();
+              },
+              body: 'nice',
+              replies: [
+                {
+                  userId: 8,
+                  body: 'I agree',
+                  commentReplyDate: new Date(2023, 2, 9, 11, 10, 0),
+                },
+              ],
+              reactions: {
+                like: 0,
+                sad: 0,
+                love: 0,
+                angry: 0,
+                wow: 0,
+                funny: 0,
+              },
+            },
+          ],
+          date: new Date(2023, 3, 19, 4, 40, 0),
         },
       ],
     },
