@@ -1,16 +1,16 @@
 import React from 'react';
 import Topbar from '../../components/topbar/Topbar';
-import Sidebar from '../../components/sidebar/Sidebar';
+import LeftSidebar from '../../components/leftSidebar/LeftSidebar';
 import Feed from '../../components/feed/Feed';
-import Rightbar from '../../components/rightbar/Rightbar';
+import RightSidebar from '../../components/rightSidebar/RightSidebar';
 
 const Home = () => (
   <div>
     <Topbar />
     <div className="app__homeContainer flex">
-      <Sidebar />
+      <LeftSidebar />
       <Feed />
-      <Rightbar />
+      <RightSidebar />
     </div>
   </div>
 );

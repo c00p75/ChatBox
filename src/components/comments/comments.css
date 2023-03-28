@@ -1,0 +1,100 @@
+.comments {
+  margin-top: 1em;
+  background-color: whitesmoke;
+  padding: 0.5em 1em;
+  border-radius: 10px;
+}
+
+.comments__comment {
+  padding: 1em;
+  margin-top: 0.5em;
+  gap: 0.5em;
+  background-color: white;
+  border-radius: 30px;
+  border-top-left-radius: 0;
+}
+
+.comments__heading {
+  font-weight: 600;
+}
+
+.comments__comment-commenter {
+  align-items: center;
+  gap: 1em;
+}
+
+.comments__comment .small-profile-pic,
+.replies__reply .small-profile-pic {
+  width: 1.5em;
+  height: 1.5em;
+  border: 1px solid white;
+}
+
+.comments__comment-commenter span,
+.replies__body-replier span {
+  font-size: smaller;
+  font-weight: 500;
+}
+
+.comments__comment-body {
+  width: 100%;
+}
+
+.comments__comment-date {
+  font-size: x-small;
+  color: grey;
+  font-weight: 500;
+  margin-left: 0.5em;
+}
+
+.comments__comment-text,
+.replies__body-text {
+  margin: 0 0.5em 0.5em 0.5em;
+}
+
+.replies__header {
+  width: 100%;
+  justify-content: space-between;
+}
+
+.replies__header button {
+  background: none;
+  border: none;
+  font-size: 0.75em;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.replies__header-left { gap: 1em; }
+
+.replies__header-replyButton {
+  align-items: center;
+}
+
+.replies__header-replyButton svg {
+  margin: 0 0.5em;
+}
+
+.replies__header-left .reactions-button { font-size: 1.3em; }
+
+.replies__header-left .reactionCounter {
+  font-size: 0.8em;
+  left: 2em;
+}
+
+.replies__input textarea {
+  margin-top: 1em;
+  padding: 0.5em;
+  border-radius: 8px;
+  width: 100%;
+  border-color: gray;
+}
+
+.replies__reply {
+  margin-top: 1em;
+  gap: 0.5em;
+  background-color: aliceblue;
+  padding: 0.5em 1em;
+  border-radius: 10px;
+  border-top-left-radius: 0;
+}

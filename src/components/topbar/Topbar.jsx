@@ -5,15 +5,17 @@ import { TiThMenu } from 'react-icons/ti';
 import images from '../../constants/images';
 import './topbar.css';
 import data from '../../constants/data';
-import SidebarLinks from '../sidebar/SidebarLinks';
+import SidebarLinks from '../leftSidebar/SidebarLinks';
 
 const Topbar = () => {
   const handleMenu = () => {
     const menu = document.querySelector('.home__topbar-bottom');
     menu.classList.toggle('slider');
   };
+  const theme = 'theme-color2';
+
   return (
-    <nav className="app_navigation">
+    <nav className={`app_navigation ${theme}`}>
       <div className="home__topbar">
         <div className="home__topbar-left">
           <div className="home__topbar-left__logo">
@@ -66,7 +68,7 @@ const Topbar = () => {
         </div>
       </div>
 
-      <div className="home__topbar-bottom slider">
+      <div className={`home__topbar-bottom slider ${theme}`}>
         <div className="home__topbar-center flex-center">
           <BsSearch />
           <input type="text" placeholder="Search..." className="home__topbar-center_searchInput" />
