@@ -12,6 +12,15 @@ import wowGIF from '../assets/reaction/wow.gif';
 import laugh from '../assets/reaction/laugh.png';
 import laughGIF from '../assets/reaction/laugh.gif';
 import giftbox from '../assets/open-gift-box.png';
+import advertisement1 from '../assets/ads/ad1.jpg';
+import advertisement2 from '../assets/ads/ad2.png';
+import advertisement3 from '../assets/ads/ad3.png';
+import advertisement4 from '../assets/ads/ad4.jpg';
+import advertisement5 from '../assets/ads/ad5.jpg';
+import advertisement6 from '../assets/ads/ad6.jpg';
+import advertisement7 from '../assets/ads/ad7.jpg';
+import advertisement8 from '../assets/ads/ad8.jpg';
+import advertisement9 from '../assets/ads/ad9.jpg';
 import profilePicture1sm from '../assets/person/1.png';
 import profilePicture2sm from '../assets/person/2.png';
 import profilePicture3sm from '../assets/person/3.png';
@@ -48,6 +57,15 @@ export default {
   love,
   loveGIF,
   giftbox,
+  advertisement1,
+  advertisement2,
+  advertisement3,
+  advertisement4,
+  advertisement5,
+  advertisement6,
+  advertisement7,
+  advertisement8,
+  advertisement9,
   profilePicture1sm,
   profilePicture2sm,
   profilePicture3sm,

@@ -65,7 +65,7 @@ const data = {
         last: 'Santon',
         fullName() { return (`${this.first} ${this.last}`); },
       },
-      online: false,
+      online: true,
       profilePictureID: images.profilePicture2sm,
       posts: [
         {
@@ -345,7 +345,7 @@ const data = {
         last: 'Soka',
         fullName() { return (`${this.first} ${this.last}`); },
       },
-      online: false,
+      online: true,
       profilePictureID: images.profilePicture7sm,
       posts: [
         {
@@ -455,7 +455,7 @@ const data = {
         last: 'Moon',
         fullName() { return (`${this.first} ${this.last}`); },
       },
-      online: false,
+      online: true,
       profilePictureID: images.profilePicture9sm,
       posts: [
         {
@@ -565,7 +565,7 @@ const data = {
         last: "M'sapenda",
         fullName() { return (`${this.first} ${this.last}`); },
       },
-      online: false,
+      online: true,
       profilePictureID: images.profilePicture11sm,
       posts: [
         {
