@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { BsSearch, BsPersonFill, BsFillChatLeftTextFill } from 'react-icons/bs';
 import { MdNotifications, MdOutlineViewTimeline } from 'react-icons/md';
 import { AiFillHome } from 'react-icons/ai';
@@ -8,9 +9,33 @@ import data from '../../constants/data';
 import SidebarLinks from '../leftSidebar/SidebarLinks';
 
 const Topbar = () => {
+  const [showMenu, setShowMenu] = useState(false);
+  const [scrollPosition, setScrollPosition] = useState(200);
+  const [disableBtn, setDisableBtn] = useState(false);
+
   const handleMenu = () => {
-    const menu = document.querySelector('.home__topbar-bottom');
-    menu.classList.toggle('slider');
+    // Toggle menu every time button is clicked
+    document.querySelector('.home__topbar-bottom').classList.toggle('slider');
+
+    setShowMenu(!showMenu);
+    if (!showMenu) {
+      // Store scroll position before no-scroll is enabled.
+      setScrollPosition(window.pageYOffset);
+
+      // Disable button when clicked
+      setDisableBtn(true);
+
+      // Add no scroll a few mili seconds after slider appears then enable the menu button
+      setTimeout(() => {
+        document.querySelector('.app__homeContainer').classList.add('no-scroll');
+        setDisableBtn(false);
+      }, 200);
+    } else {
+      // remove no-scroll
+      document.querySelector('.app__homeContainer').classList.remove('no-scroll');
+      // Return to initial scroll possition a few mili seconds after no-scroll is removed from body
+      setTimeout(() => window.scrollTo(0, scrollPosition), 10);
+    }
   };
   const theme = 'theme-color2';
 
@@ -57,7 +82,7 @@ const Topbar = () => {
               </ul>
             </li>
             <li className="home__topbar-right_link-menu">
-              <button type="button" onClick={handleMenu}>
+              <button type="button" onClick={handleMenu} disabled={disableBtn}>
                 <TiThMenu style={{ fontSize: '1.2em' }} />
               </button>
             </li>

@@ -9,8 +9,12 @@
   margin: 0 1em;
 }
 
-.rightSidebar__ad { margin-top: 3em; }
+.rightSidebar__ad { margin: 3em 0; }
 
 .rightSidebar__friendsList { padding: 1em; }
 
 .rightSidebar__friendsList h3 { padding-bottom: 1em; }
+
+@media screen and (max-width: 576px) {
+  .home__rightSidebar { display: none; }
+}

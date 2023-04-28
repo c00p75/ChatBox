@@ -5,24 +5,23 @@ import data from '../../constants/data';
 import Reactions from '../reactions/Reactions';
 import './comments.css';
 
-const Comments = ({ post }) => {
+const Comments = ({ comment }) => {
   const [ShowReply, setShowReply] = useState(false);
   return (
     <div className="comments">
-      <h5 className="comments__heading">{`Comments (${post.comments.length})`}</h5>
-      {post.comments.map((comment, index) => (
-        <div className="comments__comment flex" key={`id ${index + 1}`}>
-          <img src={data.users.filter((i) => i.userId === comment.commenterId)[0].profilePictureID} alt="profile pic" className="small-profile-pic" />
-          <div className="comments__comment-body">
-            <div className="comments__comment-commenter flex">
-              <span className="pointer">
-                {comment.commenterName()}
-              </span>
-            </div>
-            <div className="comments__comment-date">{comment.commentDate.toDateString()}</div>
-            <div className="comments__comment-text">{comment.body}</div>
-            <div className="comments__comment-bottom">
-              {comment.replies.length && (
+      <h5 className="comments__heading">{`Comments (${comment.length})`}</h5>
+      <div className="comments__comment flex">
+        <img src={data.users.filter((i) => i.userId === comment.commenterId)[0].profilePictureID} alt="profile pic" className="small-profile-pic" />
+        <div className="comments__comment-body">
+          <div className="comments__comment-commenter flex">
+            <span className="pointer">
+              {comment.commenterName()}
+            </span>
+          </div>
+          <div className="comments__comment-date">{comment.commentDate.toDateString()}</div>
+          <div className="comments__comment-text">{comment.body}</div>
+          <div className="comments__comment-bottom">
+            {comment.replies.length && (
               <div className="comments__comment-replies">
                 <div className="replies__header flex">
                   <div className="replies__header-left flex">
@@ -57,17 +56,16 @@ const Comments = ({ post }) => {
                   </div>
                 ))}
               </div>
-              )}
-            </div>
+            )}
           </div>
         </div>
-      ))}
+      </div>
     </div>
   );
 };
 
 Comments.propTypes = {
-  post: PropTypes.instanceOf(Object).isRequired,
+  comment: PropTypes.instanceOf(Object).isRequired,
 };
 
 export default Comments;
