@@ -1,0 +1,23 @@
+.home__sidebar-friendList {
+  gap: 1em;
+  flex-direction: column;
+}
+
+.home__sidebar-friend__onlineStaus {
+  width: 0.9em;
+  height: 0.9em;
+  border-radius: 50%;
+  position: absolute;
+  top: -2px;
+  right: 0;
+}
+
+.home__sidebar-friend__online {
+  background-color: limegreen;
+  border: 2px solid white;
+}
+
+.home__sidebar-friend__offline {
+  background-color: gray;
+  border: 2px solid white;
+}

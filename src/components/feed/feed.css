@@ -1,5 +1,14 @@
-.home__feed { flex: 5.5; }
+.home__feed { flex: 2; }
 
-.home__feed-wrapper {
-  padding: 1em;
+.home__feed-wrapper { padding: 1em; }
+
+.home__feed-smallScreen { display: none; }
+
+@media screen and (max-width: 576px) {
+
+  .home__feed-wrapper { padding: 0.5em; }
+
+  .home__feed-smallScreen { display: block; }
+
+  .home__feed-bigScreen { display: none; }
 }

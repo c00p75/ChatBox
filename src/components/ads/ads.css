@@ -1,0 +1,15 @@
+.rightSidebar__ad-container {
+  height: 50vh;
+}
+
+.rightSidebar__ad-img {
+  width: auto;
+  max-width: 90%;
+  max-height: 48vh;
+  cursor: pointer;
+  border-radius: 2px;
+}
+
+@media screen and (max-width: 576px) {
+  .rightSidebar__ad-img { margin-top: 2em; }
+}

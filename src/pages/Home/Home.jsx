@@ -1,4 +1,4 @@
-import React from 'react';
+import './home.css';
 import Topbar from '../../components/topbar/Topbar';
 import LeftSidebar from '../../components/leftSidebar/LeftSidebar';
 import Feed from '../../components/feed/Feed';

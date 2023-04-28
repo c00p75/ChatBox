@@ -1,5 +1,5 @@
 .home__sidebar {
-  flex: 3;
+  flex: 1;
   height: calc(100vh - 4em);
   overflow: auto;
   border-right: 1px solid gainsboro;
@@ -54,11 +54,6 @@
 .home__sidebar-more h3 {
   color: darkcyan;
   text-align: center;
-}
-
-.home__sidebar-friendList {
-  gap: 1em;
-  flex-direction: column;
 }
 
 .home__sidebar-friend {

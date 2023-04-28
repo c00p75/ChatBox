@@ -19,12 +19,7 @@ const data = {
           postImg: [],
         },
         reactions: {
-          like: 1,
-          sad: 0,
-          love: 0,
-          angry: 2,
-          wow: 4,
-          funny: 7,
+          like: 1, sad: 0, love: 0, angry: 2, wow: 4, funny: 7,
         },
         comments: [
           {
@@ -43,12 +38,7 @@ const data = {
               },
             ],
             reactions: {
-              like: 1,
-              sad: 0,
-              love: 0,
-              angry: 2,
-              wow: 4,
-              funny: 7,
+              like: 1, sad: 0, love: 0, angry: 2, wow: 4, funny: 7,
             },
           },
         ],
@@ -65,53 +55,44 @@ const data = {
         last: 'Santon',
         fullName() { return (`${this.first} ${this.last}`); },
       },
-      online: false,
+      online: true,
       profilePictureID: images.profilePicture2sm,
-      posts: [
-        {
-          userId: 2,
-          postId: 1,
-          body: {
-            text: 'lorem Ipsum',
-            postImg: [],
-          },
-          reactions: {
-            like: 1,
-            sad: 0,
-            love: 0,
-            angry: 2,
-            wow: 4,
-            funny: 7,
-          },
-          comments: [
-            {
-              commentId: 1,
-              commentDate: new Date(2023, 2, 9, 11, 10, 0),
-              commenterId: 3,
-              commenterName() {
-                data.users.filter((i) => i.userId === this.commenterId)[0].name.fullName();
-              },
-              body: 'nice',
-              replies: [
-                {
-                  userId: 2,
-                  body: 'I agree',
-                  commentReplyDate: new Date(2023, 2, 9, 11, 10, 0),
-                },
-              ],
-              reactions: {
-                like: 1,
-                sad: 0,
-                love: 0,
-                angry: 2,
-                wow: 4,
-                funny: 7,
-              },
-            },
-          ],
-          date: new Date(2023, 3, 19, 4, 40, 0),
-        },
-      ],
+      posts: [],
+      // posts: [
+      //   {
+      //     userId: 2,
+      //     postId: 1,
+      //     body: {
+      //       text: 'lorem Ipsum',
+      //       postImg: [],
+      //     },
+      //     reactions: {
+      //      like: 1, sad: 0, love: 0, angry: 2, wow: 4, funny: 7
+      //     },
+      //     comments: [
+      //       {
+      //         commentId: 1,
+      //         commentDate: new Date(2023, 2, 9, 11, 10, 0),
+      //         commenterId: 3,
+      //         commenterName() {
+      //           data.users.filter((i) => i.userId === this.commenterId)[0].name.fullName();
+      //         },
+      //         body: 'nice',
+      //         replies: [
+      //           {
+      //             userId: 2,
+      //             body: 'I agree',
+      //             commentReplyDate: new Date(2023, 2, 9, 11, 10, 0),
+      //           },
+      //         ],
+      //         reactions: {
+      //          like: 1, sad: 0, love: 0, angry: 2, wow: 4, funny: 7
+      //         },
+      //       },
+      //     ],
+      //     date: new Date(2023, 3, 19, 4, 40, 0),
+      //   },
+      // ],
     },
     {
       userId: 3,
@@ -127,40 +108,30 @@ const data = {
           userId: 3,
           postId: 1,
           body: {
-            text: 'lorem Ipsum',
+            text: 'Consistency in growing one\'s skills is underrated. Have you ever noticed that even after mastering a skill, when you stop implementing or practicing it, it simply fades away? They say that what is not practiced is soon forgoten. So to everyone pursuing mastery and being the best craftsman they can be, always remember to stay consistent, stay focused, and stay curiouse! 📌',
             postImg: [],
           },
           reactions: {
-            like: 1,
-            sad: 0,
-            love: 0,
-            angry: 2,
-            wow: 4,
-            funny: 7,
+            like: 61, sad: 0, love: 14, angry: 0, wow: 9, funny: 2,
           },
           comments: [
             {
               commentId: 1,
               commentDate: new Date(2023, 2, 9, 11, 10, 0),
-              commenterId: 3,
+              commenterId: 2,
               commenterName() {
                 data.users.filter((i) => i.userId === this.commenterId)[0].name.fullName();
               },
-              body: 'nice',
+              body: 'Well said. In the end, consistency has a compounding effect that can lead us to peak performance 🙌',
               replies: [
                 {
-                  userId: 2,
-                  body: 'I agree',
+                  userId: 3,
+                  body: 'I couldn\'t agree more.',
                   commentReplyDate: new Date(2023, 2, 9, 11, 10, 0),
                 },
               ],
               reactions: {
-                like: 1,
-                sad: 0,
-                love: 0,
-                angry: 2,
-                wow: 4,
-                funny: 7,
+                like: 3, sad: 0, love: 5, angry: 0, wow: 0, funny: 0,
               },
             },
           ],
@@ -182,18 +153,32 @@ const data = {
           userId: 4,
           postId: 1,
           body: {
-            text: 'lorem Ipsum',
-            postImg: [],
+            text: 'There\'s nothing like the great outdoors to help you reset after a stressful week.',
+            postImg: [images.picturePost5],
           },
           reactions: {
-            like: 1,
-            sad: 0,
-            love: 0,
-            angry: 2,
-            wow: 4,
-            funny: 7,
+            like: 5, sad: 0, love: 19, angry: 2, wow: 4, funny: 1,
           },
           comments: [
+            {
+              commentId: 1,
+              commentDate: new Date(2023, 2, 9, 11, 10, 0),
+              commenterId: 8,
+              commenterName() {
+                data.users.filter((i) => i.userId === this.commenterId)[0].name.fullName();
+              },
+              body: 'Works all the time',
+              replies: [
+                {
+                  userId: 2,
+                  body: 'Unless you try it in the middle winter😂🤣',
+                  commentReplyDate: new Date(2023, 2, 9, 11, 10, 0),
+                },
+              ],
+              reactions: {
+                like: 1, sad: 0, love: 0, angry: 2, wow: 4, funny: 7,
+              },
+            },
             {
               commentId: 1,
               commentDate: new Date(2023, 2, 9, 11, 10, 0),
@@ -201,21 +186,16 @@ const data = {
               commenterName() {
                 data.users.filter((i) => i.userId === this.commenterId)[0].name.fullName();
               },
-              body: 'nice',
+              body: 'You coulda invited me though',
               replies: [
                 {
-                  userId: 2,
-                  body: 'I agree',
+                  userId: 4,
+                  body: 'Totaly skipped my mind. You can still come through.',
                   commentReplyDate: new Date(2023, 2, 9, 11, 10, 0),
                 },
               ],
               reactions: {
-                like: 1,
-                sad: 0,
-                love: 0,
-                angry: 2,
-                wow: 4,
-                funny: 7,
+                like: 1, sad: 0, love: 0, angry: 2, wow: 4, funny: 7,
               },
             },
           ],
@@ -237,16 +217,13 @@ const data = {
           userId: 5,
           postId: 1,
           body: {
-            text: 'lorem Ipsum',
+            text: `The pessimist sees dificulty in every situation😣.
+            The optimist sees opportunity in every difficulty🤔.
+            WHICH ONE ARE YOU?`,
             postImg: [],
           },
           reactions: {
-            like: 1,
-            sad: 0,
-            love: 0,
-            angry: 2,
-            wow: 4,
-            funny: 7,
+            like: 41, sad: 3, love: 20, angry: 2, wow: 4, funny: 7,
           },
           comments: [
             {
@@ -256,7 +233,7 @@ const data = {
               commenterName() {
                 data.users.filter((i) => i.userId === this.commenterId)[0].name.fullName();
               },
-              body: 'nice',
+              body: 'Food for thought.',
               replies: [
                 {
                   userId: 2,
@@ -265,12 +242,7 @@ const data = {
                 },
               ],
               reactions: {
-                like: 1,
-                sad: 0,
-                love: 0,
-                angry: 2,
-                wow: 4,
-                funny: 7,
+                like: 1, sad: 0, love: 0, angry: 2, wow: 4, funny: 7,
               },
             },
           ],
@@ -296,12 +268,7 @@ const data = {
             postImg: [images.picturePost1],
           },
           reactions: {
-            like: 62,
-            sad: 0,
-            love: 0,
-            angry: 2,
-            wow: 4,
-            funny: 7,
+            like: 62, sad: 0, love: 0, angry: 2, wow: 4, funny: 7,
           },
           comments: [
             {
@@ -325,12 +292,7 @@ const data = {
                 },
               ],
               reactions: {
-                like: 1,
-                sad: 0,
-                love: 0,
-                angry: 2,
-                wow: 4,
-                funny: 7,
+                like: 1, sad: 0, love: 0, angry: 2, wow: 4, funny: 7,
               },
             },
           ],
@@ -345,23 +307,18 @@ const data = {
         last: 'Soka',
         fullName() { return (`${this.first} ${this.last}`); },
       },
-      online: false,
+      online: true,
       profilePictureID: images.profilePicture7sm,
       posts: [
         {
           userId: 7,
           postId: 1,
           body: {
-            text: 'lorem Ipsum',
-            postImg: [],
+            text: 'Black and pround. #african_queen always #be_you',
+            postImg: [images.picturePost3],
           },
           reactions: {
-            like: 1,
-            sad: 0,
-            love: 0,
-            angry: 2,
-            wow: 4,
-            funny: 7,
+            like: 1, sad: 0, love: 0, angry: 2, wow: 4, funny: 7,
           },
           comments: [
             {
@@ -380,12 +337,7 @@ const data = {
                 },
               ],
               reactions: {
-                like: 1,
-                sad: 0,
-                love: 0,
-                angry: 2,
-                wow: 4,
-                funny: 7,
+                like: 1, sad: 0, love: 0, angry: 2, wow: 4, funny: 7,
               },
             },
           ],
@@ -407,40 +359,30 @@ const data = {
           userId: 8,
           postId: 1,
           body: {
-            text: 'lorem Ipsum',
+            text: 'I\'ve learned a very important lesson the hard way today. Before you invest in something, take time to understand it',
             postImg: [],
           },
           reactions: {
-            like: 1,
-            sad: 0,
-            love: 0,
-            angry: 2,
-            wow: 4,
-            funny: 7,
+            like: 1, sad: 14, love: 1, angry: 0, wow: 1, funny: 3,
           },
           comments: [
             {
               commentId: 1,
               commentDate: new Date(2023, 2, 9, 11, 10, 0),
-              commenterId: 3,
+              commenterId: 11,
               commenterName() {
                 data.users.filter((i) => i.userId === this.commenterId)[0].name.fullName();
               },
-              body: 'nice',
+              body: 'I don\'t know what happened buddy, but we\'re learning from our failures. Keep your eyes on the prize!',
               replies: [
                 {
-                  userId: 2,
-                  body: 'I agree',
+                  userId: 9,
+                  body: 'Losses make for greater stories.',
                   commentReplyDate: new Date(2023, 2, 9, 11, 10, 0),
                 },
               ],
               reactions: {
-                like: 1,
-                sad: 0,
-                love: 0,
-                angry: 2,
-                wow: 4,
-                funny: 7,
+                like: 5, sad: 0, love: 0, angry: 0, wow: 0, funny: 0,
               },
             },
           ],
@@ -455,23 +397,18 @@ const data = {
         last: 'Moon',
         fullName() { return (`${this.first} ${this.last}`); },
       },
-      online: false,
+      online: true,
       profilePictureID: images.profilePicture9sm,
       posts: [
         {
           userId: 9,
           postId: 1,
           body: {
-            text: 'lorem Ipsum',
-            postImg: [],
+            text: 'My little sister is mostly annoying, but I don\'t not love her!!',
+            postImg: [images.picturePost2],
           },
           reactions: {
-            like: 1,
-            sad: 0,
-            love: 0,
-            angry: 2,
-            wow: 4,
-            funny: 7,
+            like: 1, sad: 0, love: 0, angry: 2, wow: 4, funny: 7,
           },
           comments: [
             {
@@ -490,12 +427,7 @@ const data = {
                 },
               ],
               reactions: {
-                like: 1,
-                sad: 0,
-                love: 0,
-                angry: 2,
-                wow: 4,
-                funny: 7,
+                like: 1, sad: 0, love: 0, angry: 2, wow: 4, funny: 7,
               },
             },
           ],
@@ -517,40 +449,30 @@ const data = {
           userId: 10,
           postId: 1,
           body: {
-            text: 'lorem Ipsum',
+            text: 'I\'m working 16 hours a day, 7 day\'s a week, 52 weeks in a year, and people still call my success luck??😖😖 ',
             postImg: [],
           },
           reactions: {
-            like: 1,
-            sad: 0,
-            love: 0,
-            angry: 2,
-            wow: 4,
-            funny: 7,
+            like: 8, sad: 1, love: 6, angry: 21, wow: 8, funny: 17,
           },
           comments: [
             {
               commentId: 1,
               commentDate: new Date(2023, 2, 9, 11, 10, 0),
-              commenterId: 3,
+              commenterId: 7,
               commenterName() {
                 data.users.filter((i) => i.userId === this.commenterId)[0].name.fullName();
               },
-              body: 'nice',
+              body: 'Things look rosey from the outside looking in 🤷🏾‍♀️😂',
               replies: [
                 {
-                  userId: 2,
-                  body: 'I agree',
+                  userId: 5,
+                  body: 'She\'s soo amazing because she really makes it look easy.',
                   commentReplyDate: new Date(2023, 2, 9, 11, 10, 0),
                 },
               ],
               reactions: {
-                like: 1,
-                sad: 0,
-                love: 0,
-                angry: 2,
-                wow: 4,
-                funny: 7,
+                like: 1, sad: 0, love: 0, angry: 2, wow: 4, funny: 7,
               },
             },
           ],
@@ -565,7 +487,7 @@ const data = {
         last: "M'sapenda",
         fullName() { return (`${this.first} ${this.last}`); },
       },
-      online: false,
+      online: true,
       profilePictureID: images.profilePicture11sm,
       posts: [
         {
@@ -581,12 +503,7 @@ const data = {
             ],
           },
           reactions: {
-            like: 1,
-            sad: 0,
-            love: 0,
-            angry: 2,
-            wow: 4,
-            funny: 7,
+            like: 1, sad: 0, love: 0, angry: 2, wow: 4, funny: 7,
           },
           comments: [
             {
@@ -605,12 +522,7 @@ const data = {
                 },
               ],
               reactions: {
-                like: 0,
-                sad: 0,
-                love: 0,
-                angry: 0,
-                wow: 0,
-                funny: 0,
+                like: 0, sad: 0, love: 0, angry: 0, wow: 0, funny: 0,
               },
             },
           ],

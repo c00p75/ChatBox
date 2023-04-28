@@ -3,6 +3,7 @@ import './leftSidebar.css';
 import { MdExpandCircleDown } from 'react-icons/md';
 import data from '../../constants/data';
 import SidebarLinks from './SidebarLinks';
+import FriendsList from '../friendsList/FriendsList';
 
 const LeftSidebar = () => {
   const [showMore, setShowMore] = useState(false);
@@ -17,14 +18,7 @@ const LeftSidebar = () => {
         <div className={`home__sidebar-more flex ${!showMore && 'hide'}`}>
           <hr className="home__sidebar-hr" />
           <h3>Friends</h3>
-          <ul className="home__sidebar-friendList flex">
-            {data.users.map((user) => (
-              <li className="home__sidebar-friend flex pointer" key={user.userId}>
-                <img src={user.profilePictureID} alt="profile pic" className="small-profile-pic" />
-                <span>{user.name.fullName()}</span>
-              </li>
-            ))}
-          </ul>
+          <FriendsList friends={data.users} />
         </div>
       </div>
     </div>
