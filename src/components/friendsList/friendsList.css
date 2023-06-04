@@ -1,7 +1,13 @@
-.home__sidebar-friendList {
-  gap: 1em;
-  flex-direction: column;
+.home__sidebar-friendList { flex-direction: column; }
+
+.home__sidebar-friendList li:last-child { margin-bottom: 0; }
+
+.home__sidebar-friend {
+  margin-bottom: 1em;
+  align-items: center;
 }
+
+.home__sidebar-friend > div { margin-right: 1em; }
 
 .home__sidebar-friend__onlineStaus {
   width: 0.9em;
@@ -9,7 +15,7 @@
   border-radius: 50%;
   position: absolute;
   top: -2px;
-  right: 0;
+  right: 0.5em;
 }
 
 .home__sidebar-friend__online {

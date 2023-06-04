@@ -10,10 +10,9 @@
   padding: 1em;
 }
 
-.home__share-top {
-  align-items: center;
-  gap: 1em;
-}
+.home__share-top { align-items: center; }
+
+.home__share-img { margin-right: 1em; }
 
 .home__share-input {
   width: 80%;
@@ -31,18 +30,19 @@
   justify-content: space-between;
   padding: 0 0.5em;
   flex-wrap: wrap;
-  gap: 1em;
 }
 
 .home__share-options {
-  gap: 1em;
+  margin-bottom: 1em;
   flex-wrap: wrap;
 }
 
 .home__share-option {
   align-items: center;
-  gap: 0.3em;
+  margin: 1em 1em 0 0;
 }
+
+.home__share-option_icon { margin-right: 0.3em; }
 
 .home__share-button {
   border: none;

@@ -6,22 +6,27 @@
 }
 
 .comments__comment {
+  flex-direction: column;
   padding: 1em;
   margin-top: 0.5em;
-  gap: 0.5em;
   background-color: white;
   border-radius: 30px;
   border-top-left-radius: 0;
 }
 
-.comments__heading {
-  font-weight: 600;
+.comments__comment-header {
+  align-items: center;
+  margin-bottom: 1em;
 }
 
 .comments__comment-commenter {
   align-items: center;
-  gap: 1em;
+  justify-content: center;
 }
+
+.comments__comment-commenter > span { margin-right: 0.5em; }
+
+.small-profile-pic { margin: 0 0.5em 0 0; }
 
 .comments__comment .small-profile-pic,
 .replies__reply .small-profile-pic {
@@ -36,21 +41,16 @@
   font-weight: 500;
 }
 
-.comments__comment-body {
-  width: 100%;
-}
+.comments__comment-body { width: 100%; }
 
 .comments__comment-date {
   font-size: x-small;
   color: grey;
   font-weight: 500;
-  margin-left: 0.5em;
 }
 
 .comments__comment-text,
-.replies__body-text {
-  margin: 0 0.5em 0.5em 0.5em;
-}
+.replies__body-text { margin: 0 0.5em 0.5em 0.5em; }
 
 .replies__header {
   width: 100%;
@@ -65,15 +65,12 @@
   cursor: pointer;
 }
 
-.replies__header-left { gap: 1em; }
-
 .replies__header-replyButton {
   align-items: center;
+  margin-right: 1em;
 }
 
-.replies__header-replyButton svg {
-  margin: 0 0.5em;
-}
+.replies__header-replyButton svg { margin: 0 0.5em; }
 
 .replies__header-left .reactions-button { font-size: 1.3em; }
 
@@ -91,8 +88,8 @@
 }
 
 .replies__reply {
+  flex-direction: column;
   margin-top: 1em;
-  gap: 0.5em;
   background-color: aliceblue;
   padding: 0.5em 1em;
   border-radius: 10px;

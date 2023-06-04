@@ -1,10 +1,12 @@
+/* eslint-disable no-unused-vars */
+/* eslint-disable max-len */
 import data from '../../constants/data';
 import Post from '../post/Post';
 import Share from '../share/Share';
 import Ads from '../ads/Ads';
 import './feed.css';
 
-const feed = () => (
+const Feed = () => (
   <div className="home__feed">
     <div className="home__feed-wrapper">
       <Share />
@@ -29,4 +31,4 @@ const feed = () => (
   </div>
 );
 
-export default feed;
+export default Feed;

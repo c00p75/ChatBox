@@ -13,6 +13,12 @@
   --theme-color4: lightpink;
 }
 
+button {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
 .theme-color1 {
   background-color: var(--theme-color1);
 }
@@ -93,6 +99,40 @@
 .no-scroll {
   position: fixed;
   overflow: hidden;
+}
+
+.tooltip {
+  position: relative;
+  display: inline-block;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  background-color: rgb(0, 0, 0, 0.9);
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  position: absolute;
+  bottom: 120%;
+  left: 50%;
+  margin-left: -60px;
+}
+
+.tooltip .tooltiptext::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: black transparent transparent transparent;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
 }
 
 @media screen and (max-width: 768px) {

@@ -130,3 +130,8 @@
   background: none;
   border: none;
 }
+
+.comments__heading {
+  font-weight: 600;
+  margin-top: 1.5em;
+}

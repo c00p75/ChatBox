@@ -6,7 +6,7 @@ const Replies = ({ comment, display }) => (
     {display && (
       comment.replies.map((reply, index) => (
         <div className="replies__reply flex" key={`${index + 1}`}>
-          <img src={data.users.filter((i) => i.userId === reply.userId)[0].profilePictureID} alt="profile pic" className="small-profile-pic" />
+          <img src={data.users.filter((i) => i.userId === reply.userId)[0].profilePictureID[0]} alt="profile pic" className="small-profile-pic" />
           <div className="replies__body">
             <div className="replies__body-replier">
               <span className="pointer">

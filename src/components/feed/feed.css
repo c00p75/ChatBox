@@ -1,10 +1,10 @@
-.home__feed { flex: 2; }
+.home__feed { flex: 2.6; }
 
 .home__feed-wrapper { padding: 1em; }
 
 .home__feed-smallScreen { display: none; }
 
-@media screen and (max-width: 576px) {
+@media screen and (max-width: 768px) {
 
   .home__feed-wrapper { padding: 0.5em; }
 

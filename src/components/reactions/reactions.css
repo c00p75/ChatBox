@@ -52,7 +52,6 @@
 
 .reactions__reaction {
   align-items: center;
-  gap: 1em;
   position: relative;
   display: flex;
 }

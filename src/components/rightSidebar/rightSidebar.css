@@ -1,6 +1,6 @@
-.home__rightSidebar { flex: 1.3; }
+.home__rightSidebar { flex: 1.2; }
 
-.rightSidebar__wrapper { padding: 1em 2em 1em 0; }
+.rightSidebar__wrapper { padding: 1em 0; }
 
 .rightSidebar__birthday-container { align-items: center; }
 
@@ -15,6 +15,39 @@
 
 .rightSidebar__friendsList h3 { padding-bottom: 1em; }
 
-@media screen and (max-width: 576px) {
+.rightSidebar__userInfo { color: darkslategray; }
+
+.rightSidebar__userInfo-item {
+  margin: 0.5em 0;
+  display: flex;
+}
+
+.rightSidebar__userInfo-item_visible {
+  margin-right: 0.5em;
+  display: flex;
+  align-items: flex-start;
+  margin-top: 0.5em;
+}
+
+.rightSidebar__userInfo-icon { width: 1.5em; }
+
+.rightSidebar__userInfo-item_key {
+  font-weight: 500;
+  display: inline-flex;
+  align-items: center;
+}
+
+.rightSidebar__userInfo-item :last-child img { margin-right: 0.3em; }
+
+.rightSidebar__userInfo-item_value { margin-left: 0.3em; }
+
+.rightSidebar__userInfo-item_value-edit {
+  font-size: 0.7em;
+  margin-left: 0.5em;
+  cursor: pointer;
+  color: darkslategray;
+}
+
+@media screen and (max-width: 768px) {
   .home__rightSidebar { display: none; }
 }

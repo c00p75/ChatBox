@@ -1,3 +1,5 @@
+This is a social media app build with react and javascript on the front-end and takes NoSQL approach with NodeJS on the backend.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

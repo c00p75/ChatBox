@@ -4,7 +4,7 @@
   z-index: 10;
 }
 
-.home__topbar {
+.topbar {
   height: 4em;
   display: flex;
   align-items: center;
@@ -13,14 +13,14 @@
   padding: 0 1em;
 }
 
-.home__topbar-left__logo-text {
+.topbar__left-logo__text {
   position: relative;
   display: flex;
   flex-direction: column;
   line-height: 0.7em;
 }
 
-.home__topbar-left__logo-text img {
+.topbar__left-logo__text img {
   width: 2em;
   position: absolute;
   z-index: 0;
@@ -28,50 +28,57 @@
   left: 35%;
 }
 
-.home__topbar-left__logo-text span {
+.topbar__left-logo__text span {
   z-index: 1;
 }
 
-.home__topbar-left {
+.topbar__left {
   flex: 3;
 }
 
-.home__topbar-center {
+.topbar__center {
   flex: 4;
   background-color: white;
   height: 60%;
   border-radius: 15px;
   padding: 0.5em;
-  gap: 1em;
 }
 
-.home__topbar-center_searchInput {
+.topbar__center svg {
+  fill: black;
+  margin: 0 1em;
+}
+
+.topbar__center-searchInput {
+  color: black;
   width: 100%;
   border: none;
   outline: none;
 }
 
-.home__topbar-right {
+.topbar__right {
   flex: 5;
   justify-content: end;
   color: white;
 }
 
-.home__topbar ul {
+.topbar ul {
   display: flex;
   list-style: none;
   align-items: center;
 }
 
-.home__topbar-right_links { gap: 1.5em; }
+.topbar__right-links > * { margin-right: 1.5em; }
 
-.home__topbar-right_icons { gap: 0.8em; }
+.topbar__right-links > *:last-child { margin: 0; }
 
-.home__topbar-right_icon { position: relative; }
+.topbar__right-icons { gap: 0.8em; }
 
-.home__topbar-right_icon svg { font-size: 1.4em; }
+.topbar__right-icon { position: relative; }
 
-.home__topbar-right_iconBadge {
+.topbar__right-icon svg { font-size: 1.4em; }
+
+.topbar__right-iconBadge {
   position: absolute;
   top: -0.5em;
   right: -0.5em;
@@ -83,40 +90,40 @@
   padding: 0.65em;
 }
 
-.home__topbar-right_link-menu {
+.topbar__right-link__menu {
   display: none;
 }
 
-.home__topbar-bottom { display: none; }
+.topbar__bottom { display: none; }
 
 @media screen and (max-width: 768px) {
-  .home__topbar-left {
+  .topbar__left {
     flex: 2;
   }
 }
 
 @media screen and (max-width: 576px) {
-  .home__topbar-left__logo-text {
+  .topbar__left-logo__text {
     font-size: 1.5em;
   }
 
-  .home__topbar-left {
+  .topbar__left {
     flex: 1;
   }
 
-  .home__topbar-center {
+  .topbar__center {
     display: none;
   }
 
-  .home__topbar-right_link:has(.home__topbar-right_icons) {
+  .topbar__right-link:has(.topbar__right-icons) {
     display: none;
   }
 
-  .home__topbar-right_link-menu {
+  .topbar__right-link__menu {
     display: flex !important;
   }
 
-  .home__topbar-right_link-menu button {
+  .topbar__right-link__menu button {
     display: flex !important;
     background: none;
     color: white;
@@ -126,7 +133,7 @@
     height: 100%;
   }
 
-  .home__topbar-bottom {
+  .topbar__bottom {
     position: fixed;
     height: 100%;
     z-index: -1;
@@ -142,46 +149,46 @@
     overflow: auto;
   }
 
-  .home__topbar-bottom::-webkit-scrollbar {
+  .topbar__bottom::-webkit-scrollbar {
     width: 0;
     border-bottom-right-radius: 5px;
   }
 
-  .home__topbar-bottom_link {
+  .topbar__bottom-link {
     flex-direction: column;
     gap: 1em;
     color: white;
   }
 
-  .home__topbar-bottom .home__topbar-center {
+  .topbar__bottom .topbar__center {
     display: flex !important;
   }
 
-  .home__topbar-bottom_icons {
+  .topbar__bottom-icons {
     display: flex;
     flex-direction: column;
     list-style: none;
     gap: 1em;
   }
 
-  .home__topbar-bottom_icons li {
+  .topbar__bottom-icons li {
     color: white;
     display: flex;
     align-items: center;
   }
 
-  .home__topbar-right_iconBadge {
+  .topbar__right-iconBadge {
     position: relative;
     margin-left: 1em;
     top: 0;
     left: 0;
   }
 
-  .home__sidebar {
+  .sidebar {
     display: flex !important;
   }
 
-  .home__sidebar-list {
+  .sidebar-list {
     overflow: auto;
   }
 }

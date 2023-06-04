@@ -7,18 +7,18 @@ import './comments.css';
 
 const Comments = ({ comment }) => {
   const [ShowReply, setShowReply] = useState(false);
+  console.log(comment);
   return (
     <div className="comments">
-      <h5 className="comments__heading">{`Comments (${comment.length})`}</h5>
       <div className="comments__comment flex">
-        <img src={data.users.filter((i) => i.userId === comment.commenterId)[0].profilePictureID} alt="profile pic" className="small-profile-pic" />
-        <div className="comments__comment-body">
-          <div className="comments__comment-commenter flex">
-            <span className="pointer">
-              {comment.commenterName()}
-            </span>
+        <div className="comments__comment-header flex">
+          <img src={data.users.filter((i) => i.userId === comment.commenterId)[0].profilePictureID[0]} alt="profile pic" className="small-profile-pic" />
+          <div className="comments__comment-commenter flex-center">
+            <span className="pointer">{comment.commenterName()}</span>
+            <div className="comments__comment-date">{comment.commentDate.toDateString()}</div>
           </div>
-          <div className="comments__comment-date">{comment.commentDate.toDateString()}</div>
+        </div>
+        <div className="comments__comment-body">
           <div className="comments__comment-text">{comment.body}</div>
           <div className="comments__comment-bottom">
             {comment.replies.length && (
@@ -43,14 +43,16 @@ const Comments = ({ comment }) => {
                 </div>
                 {ShowReply && comment.replies.map((reply, index) => (
                   <div className="replies__reply flex" key={`${index + 1}`}>
-                    <img src={data.users.filter((i) => i.userId === reply.userId)[0].profilePictureID} alt="profile pic" className="small-profile-pic" />
-                    <div className="replies__body">
+                    <div className="comments__comment-header flex">
+                      <img src={data.users.filter((i) => i.userId === reply.userId)[0].profilePictureID[0]} alt="profile pic" className="small-profile-pic" />
                       <div className="replies__body-replier">
                         <span className="pointer">
                           {data.users.filter((i) => i.userId === reply.userId)[0].name.fullName()}
                         </span>
+                        <div className="comments__comment-date">{reply.commentReplyDate.toDateString()}</div>
                       </div>
-                      <div className="comments__comment-date">{reply.commentReplyDate.toDateString()}</div>
+                    </div>
+                    <div className="replies__body">
                       <p className="replies__body-text">{reply.body}</p>
                     </div>
                   </div>

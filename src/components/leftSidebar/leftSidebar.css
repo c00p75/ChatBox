@@ -18,23 +18,33 @@
 }
 
 .home__sidebar-wrapper {
-  padding: 1em 2em;
+  padding: 1em 1.5em;
   flex-direction: column;
-  gap: 2em;
 }
+
+.home__sidebar-wrapper > * { margin-bottom: 2em; }
+
+.home__sidebar-more > * { margin-bottom: 1.2em; }
+
+.home__sidebar-more > *:last-child { margin: 0; }
+
+.home__sidebar-wrapper > *:last-child { margin-bottom: 0; }
 
 .home__sidebar-list {
   flex-direction: column;
-  gap: 1.65em;
   list-style: none;
 }
 
 .home__sidebar-listItem {
   display: flex;
   align-items: center;
-  gap: 0.5em;
   cursor: pointer;
+  margin-bottom: 1.65em;
 }
+
+.home__sidebar-listItem_text { margin-left: 0.5em; }
+
+.home__sidebar-list .home__sidebar-listItem:last-child { margin: 0; }
 
 .home__sidebar-button {
   background: none;
@@ -43,12 +53,13 @@
   border-radius: 5px;
   outline: none;
   padding: 0.5em;
-  gap: 1em;
+  margin: 0;
 }
+
+.home__sidebar-hr { margin: 2em 0 1.5em 0; }
 
 .home__sidebar-more {
   flex-direction: column;
-  gap: 1em;
 }
 
 .home__sidebar-more h3 {
@@ -56,14 +67,10 @@
   text-align: center;
 }
 
-.home__sidebar-friend {
-  align-items: center;
-  gap: 1em;
-}
-
 .home__sidebar-icon {
   transition: all 0.5s ease;
   font-size: 1.5em;
+  margin-left: 0.5em;
 }
 
 .home__sidebar-icon_showless {
@@ -71,12 +78,58 @@
   transition: 0.3s ease;
 }
 
+.home__sidebar_more { display: none; }
+
 @media screen and (max-width: 768px) {
+  .home__sidebar { position: absolute; }
+
+  .home__sidebar_more {
+    display: block;
+    position: fixed;
+    border: none;
+    z-index: 4;
+    border-top-right-radius: 2em;
+    border-bottom-right-radius: 2em;
+    width: 3em;
+    height: 2em;
+    top: 0;
+    bottom: 0;
+    left: -2em;
+    margin: auto;
+    font-size: 3em;
+    font-weight: bolder;
+    background-color: rgb(0, 0, 0, 0.5);
+  }
+
+  .home__sidebar_more-arrow__container { position: relative; }
+
+  .home__sidebar_more-arrow {
+    color: white;
+    position: absolute;
+    top: -0.5em;
+    right: 0.3em;
+  }
+
+  .leftMenuSlider {
+    margin-left: -100%;
+  }
+
+  .leftMenuSliderFixed {
+    position: fixed !important;
+    background: white;
+    z-index: 3;
+    width: 15em;
+  }
+
   .home__sidebar-wrapper {
     padding: 0.5em;
   }
 }
 
 @media screen and (max-width: 576px) {
-  .home__sidebar { display: none !important; }
+  .home__sidebar {
+    margin-left: -100%;
+  }
+
+  .home__sidebar_more { display: none; }
 }

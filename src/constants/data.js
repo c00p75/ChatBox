@@ -1,53 +1,69 @@
 import images from './images';
 
 const data = {
-  userProfile: {
-    UserId: 1,
-    name: {
-      first: 'Imani',
-      last: 'Sherif',
-      fullName() { return (`${this.first} ${this.last}`); },
-    },
-    online: false,
-    profilePictureID: images.profilePicture1sm,
-    posts: [
-      {
-        userId: 1,
-        postId: 1,
-        body: {
-          text: 'lorem Ipsum',
-          postImg: [],
-        },
-        reactions: {
-          like: 1, sad: 0, love: 0, angry: 2, wow: 4, funny: 7,
-        },
-        comments: [
-          {
-            commentId: 1,
-            commentDate: new Date(2023, 2, 9, 11, 10, 0),
-            commenterId: 3,
-            commenterName() {
-              data.users.filter((i) => i.userId === this.commenterId)[0].name.fullName();
-            },
-            body: 'nice',
-            replies: [
-              {
-                userId: 2,
-                body: 'I agree',
-                commentReplyDate: new Date(2023, 2, 9, 11, 10, 0),
-              },
-            ],
-            reactions: {
-              like: 1, sad: 0, love: 0, angry: 2, wow: 4, funny: 7,
-            },
-          },
-        ],
-        date: new Date(2023, 3, 19, 4, 40, 0),
-      },
-    ],
-  },
-
   users: [
+    {
+      userId: 1,
+      name: {
+        first: 'Imani',
+        last: 'Sherif',
+        fullName() { return (`${this.first} ${this.last}`); },
+      },
+      online: false,
+      profilePictureID: [
+        images.profilePicture1sm, images.profilePicture1md, images.profilePicture1bg,
+      ],
+      profile: {
+        coverPhoto: images.coverPhoto9,
+        description: 'Hello friends, Nice to meet you.',
+        userInformation: {
+          country: { val: 'France', public: true },
+          state: { val: 'Paris Region' },
+          city: { val: 'Parice' },
+          relationship: { val: 'Single', public: true },
+          dob: { val: '12/04/199', public: false },
+          friends: { val: 273, public: true },
+          followers: { val: 113, public: true },
+          following: { val: 86, public: true },
+          gender: { val: 'Male', public: true },
+        },
+      },
+      posts: [
+        {
+          userId: 1,
+          postId: 1,
+          body: {
+            text: 'If God is for me, who can be against me!',
+            postImg: [],
+          },
+          reactions: {
+            like: 1, sad: 0, love: 0, angry: 2, wow: 4, funny: 7,
+          },
+          comments: [
+            {
+              commentId: 1,
+              commentDate: new Date(2023, 2, 9, 11, 10, 0),
+              commenterId: 3,
+              commenterName() {
+                return data.users.filter((i) => i.userId === this.commenterId)[0].name.fullName();
+              },
+              body: 'nice',
+              replies: [
+                {
+                  userId: 2,
+                  body: 'I agree',
+                  commentReplyDate: new Date(2023, 2, 9, 11, 10, 0),
+                },
+              ],
+              reactions: {
+                like: 1, sad: 0, love: 0, angry: 2, wow: 4, funny: 7,
+              },
+            },
+          ],
+          date: new Date(2023, 3, 19, 4, 40, 0),
+        },
+      ],
+    },
     {
       userId: 2,
       name: {
@@ -56,43 +72,25 @@ const data = {
         fullName() { return (`${this.first} ${this.last}`); },
       },
       online: true,
-      profilePictureID: images.profilePicture2sm,
+      profilePictureID: [
+        images.profilePicture2sm, images.profilePicture2md, images.profilePicture2bg,
+      ],
+      profile: {
+        coverPhoto: images.coverPhoto4,
+        description: 'Hello friends, Nice to meet you.',
+        userInformation: {
+          country: { val: 'Spain', public: true },
+          state: { val: 'Madrid' },
+          city: { val: 'Madrid' },
+          relationship: { val: 'Single', public: true },
+          dob: { val: '12/04/199', public: false },
+          friends: { val: 273, public: true },
+          followers: { val: 113, public: true },
+          following: { val: 86, public: true },
+          gender: { val: 'Male', public: true },
+        },
+      },
       posts: [],
-      // posts: [
-      //   {
-      //     userId: 2,
-      //     postId: 1,
-      //     body: {
-      //       text: 'lorem Ipsum',
-      //       postImg: [],
-      //     },
-      //     reactions: {
-      //      like: 1, sad: 0, love: 0, angry: 2, wow: 4, funny: 7
-      //     },
-      //     comments: [
-      //       {
-      //         commentId: 1,
-      //         commentDate: new Date(2023, 2, 9, 11, 10, 0),
-      //         commenterId: 3,
-      //         commenterName() {
-      //           data.users.filter((i) => i.userId === this.commenterId)[0].name.fullName();
-      //         },
-      //         body: 'nice',
-      //         replies: [
-      //           {
-      //             userId: 2,
-      //             body: 'I agree',
-      //             commentReplyDate: new Date(2023, 2, 9, 11, 10, 0),
-      //           },
-      //         ],
-      //         reactions: {
-      //          like: 1, sad: 0, love: 0, angry: 2, wow: 4, funny: 7
-      //         },
-      //       },
-      //     ],
-      //     date: new Date(2023, 3, 19, 4, 40, 0),
-      //   },
-      // ],
     },
     {
       userId: 3,
@@ -102,7 +100,24 @@ const data = {
         fullName() { return (`${this.first} ${this.last}`); },
       },
       online: false,
-      profilePictureID: images.profilePicture3sm,
+      profilePictureID: [
+        images.profilePicture3sm, images.profilePicture3md, images.profilePicture3bg,
+      ],
+      profile: {
+        coverPhoto: images.coverPhoto1,
+        description: 'Hello friends, Nice to meet you.',
+        userInformation: {
+          country: { val: 'Namibia', public: true },
+          state: { val: 'central Khomas Region' },
+          city: { val: 'Windhoek' },
+          relationship: { val: 'Single', public: true },
+          dob: { val: '12/04/199', public: false },
+          friends: { val: 273, public: true },
+          followers: { val: 113, public: true },
+          following: { val: 86, public: true },
+          gender: { val: 'Male', public: true },
+        },
+      },
       posts: [
         {
           userId: 3,
@@ -120,7 +135,7 @@ const data = {
               commentDate: new Date(2023, 2, 9, 11, 10, 0),
               commenterId: 2,
               commenterName() {
-                data.users.filter((i) => i.userId === this.commenterId)[0].name.fullName();
+                return data.users.filter((i) => i.userId === this.commenterId)[0].name.fullName();
               },
               body: 'Well said. In the end, consistency has a compounding effect that can lead us to peak performance 🙌',
               replies: [
@@ -147,14 +162,31 @@ const data = {
         fullName() { return (`${this.first} ${this.last}`); },
       },
       online: false,
-      profilePictureID: images.profilePicture4sm,
+      profilePictureID: [
+        images.profilePicture4sm, images.profilePicture4md, images.profilePicture4bg,
+      ],
+      profile: {
+        coverPhoto: images.coverPhoto3,
+        description: 'Hello friends, Nice to meet you.',
+        userInformation: {
+          country: { val: 'Mexico', public: true },
+          state: { val: 'Mexico City' },
+          city: { val: 'Mexico City' },
+          relationship: { val: 'Single', public: true },
+          dob: { val: '12/04/199', public: false },
+          friends: { val: 273, public: true },
+          followers: { val: 113, public: true },
+          following: { val: 86, public: true },
+          gender: { val: 'Male', public: true },
+        },
+      },
       posts: [
         {
           userId: 4,
           postId: 1,
           body: {
             text: 'There\'s nothing like the great outdoors to help you reset after a stressful week.',
-            postImg: [images.picturePost5],
+            postImg: [images.picturePost7],
           },
           reactions: {
             like: 5, sad: 0, love: 19, angry: 2, wow: 4, funny: 1,
@@ -165,7 +197,7 @@ const data = {
               commentDate: new Date(2023, 2, 9, 11, 10, 0),
               commenterId: 8,
               commenterName() {
-                data.users.filter((i) => i.userId === this.commenterId)[0].name.fullName();
+                return data.users.filter((i) => i.userId === this.commenterId)[0].name.fullName();
               },
               body: 'Works all the time',
               replies: [
@@ -184,7 +216,7 @@ const data = {
               commentDate: new Date(2023, 2, 9, 11, 10, 0),
               commenterId: 3,
               commenterName() {
-                data.users.filter((i) => i.userId === this.commenterId)[0].name.fullName();
+                return data.users.filter((i) => i.userId === this.commenterId)[0].name.fullName();
               },
               body: 'You coulda invited me though',
               replies: [
@@ -211,7 +243,24 @@ const data = {
         fullName() { return (`${this.first} ${this.last}`); },
       },
       online: false,
-      profilePictureID: images.profilePicture5sm,
+      profilePictureID: [
+        images.profilePicture5sm, images.profilePicture5md, images.profilePicture5bg,
+      ],
+      profile: {
+        coverPhoto: images.coverPhoto7,
+        description: 'Hi there. Feel free to reach out',
+        userInformation: {
+          country: { val: 'USA', public: true },
+          state: { val: 'Massachusetts' },
+          city: { val: 'Boston' },
+          relationship: { val: 'Single', public: true },
+          dob: { val: '12/04/199', public: false },
+          friends: { val: 273, public: true },
+          followers: { val: 113, public: true },
+          following: { val: 86, public: true },
+          gender: { val: 'Male', public: true },
+        },
+      },
       posts: [
         {
           userId: 5,
@@ -231,7 +280,7 @@ const data = {
               commentDate: new Date(2023, 2, 9, 11, 10, 0),
               commenterId: 3,
               commenterName() {
-                data.users.filter((i) => i.userId === this.commenterId)[0].name.fullName();
+                return data.users.filter((i) => i.userId === this.commenterId)[0].name.fullName();
               },
               body: 'Food for thought.',
               replies: [
@@ -258,7 +307,24 @@ const data = {
         fullName() { return (`${this.first} ${this.last}`); },
       },
       online: false,
-      profilePictureID: images.profilePicture6sm,
+      profilePictureID: [
+        images.profilePicture6sm, images.profilePicture6md, images.profilePicture6bg,
+      ],
+      profile: {
+        coverPhoto: images.coverPhoto8,
+        description: 'Hello friends, Nice to meet you.',
+        userInformation: {
+          country: { val: 'Canada', public: true },
+          state: { val: 'Ontario' },
+          city: { val: 'Toronto' },
+          relationship: { val: 'Single', public: true },
+          dob: { val: '12/04/199', public: false },
+          friends: { val: 273, public: true },
+          followers: { val: 113, public: true },
+          following: { val: 86, public: true },
+          gender: { val: 'Male', public: true },
+        },
+      },
       posts: [
         {
           userId: 6,
@@ -276,7 +342,7 @@ const data = {
               commentDate: new Date(2023, 2, 9, 11, 10, 0),
               commenterId: 3,
               commenterName() {
-                data.users.filter((i) => i.userId === this.commenterId)[0].name.fullName();
+                return data.users.filter((i) => i.userId === this.commenterId)[0].name.fullName();
               },
               body: 'nice',
               replies: [
@@ -308,7 +374,24 @@ const data = {
         fullName() { return (`${this.first} ${this.last}`); },
       },
       online: true,
-      profilePictureID: images.profilePicture7sm,
+      profilePictureID: [
+        images.profilePicture7sm, images.profilePicture7md, images.profilePicture7bg,
+      ],
+      profile: {
+        coverPhoto: images.coverPhoto11,
+        description: 'Hello friends, Nice to meet you.',
+        userInformation: {
+          country: { val: 'Zambia', public: true },
+          state: { val: 'Copperbelt' },
+          city: { val: 'Kasama' },
+          relationship: { val: 'Single', public: true },
+          dob: { val: '12/04/199', public: false },
+          friends: { val: 273, public: true },
+          followers: { val: 113, public: true },
+          following: { val: 86, public: true },
+          gender: { val: 'Male', public: true },
+        },
+      },
       posts: [
         {
           userId: 7,
@@ -326,7 +409,7 @@ const data = {
               commentDate: new Date(2023, 2, 9, 11, 10, 0),
               commenterId: 3,
               commenterName() {
-                data.users.filter((i) => i.userId === this.commenterId)[0].name.fullName();
+                return data.users.filter((i) => i.userId === this.commenterId)[0].name.fullName();
               },
               body: 'nice',
               replies: [
@@ -353,7 +436,24 @@ const data = {
         fullName() { return (`${this.first} ${this.last}`); },
       },
       online: false,
-      profilePictureID: images.profilePicture8sm,
+      profilePictureID: [
+        images.profilePicture8sm, images.profilePicture8md, images.profilePicture8bg,
+      ],
+      profile: {
+        coverPhoto: images.coverPhoto2,
+        description: 'Hey, I\'m Dominic. Feel free to reach out.',
+        userInformation: {
+          country: { val: 'United Kingdom', public: true },
+          state: { val: 'London' },
+          city: { val: 'London' },
+          relationship: { val: 'Single', public: true },
+          dob: { val: '12/04/199', public: false },
+          friends: { val: 273, public: true },
+          followers: { val: 113, public: true },
+          following: { val: 86, public: true },
+          gender: { val: 'Male', public: true },
+        },
+      },
       posts: [
         {
           userId: 8,
@@ -371,7 +471,7 @@ const data = {
               commentDate: new Date(2023, 2, 9, 11, 10, 0),
               commenterId: 11,
               commenterName() {
-                data.users.filter((i) => i.userId === this.commenterId)[0].name.fullName();
+                return data.users.filter((i) => i.userId === this.commenterId)[0].name.fullName();
               },
               body: 'I don\'t know what happened buddy, but we\'re learning from our failures. Keep your eyes on the prize!',
               replies: [
@@ -398,7 +498,24 @@ const data = {
         fullName() { return (`${this.first} ${this.last}`); },
       },
       online: true,
-      profilePictureID: images.profilePicture9sm,
+      profilePictureID: [
+        images.profilePicture9sm, images.profilePicture9md, images.profilePicture9bg,
+      ],
+      profile: {
+        coverPhoto: images.coverPhoto10,
+        description: 'Hello friends, Nice to meet you.',
+        userInformation: {
+          country: { val: 'South Africa', public: true },
+          state: { val: 'Eastern Cape' },
+          city: { val: 'Bhisho' },
+          relationship: { val: 'Single', public: true },
+          dob: { val: '12/04/199', public: false },
+          friends: { val: 273, public: true },
+          followers: { val: 113, public: true },
+          following: { val: 86, public: true },
+          gender: { val: 'Male', public: true },
+        },
+      },
       posts: [
         {
           userId: 9,
@@ -416,7 +533,7 @@ const data = {
               commentDate: new Date(2023, 2, 9, 11, 10, 0),
               commenterId: 3,
               commenterName() {
-                data.users.filter((i) => i.userId === this.commenterId)[0].name.fullName();
+                return data.users.filter((i) => i.userId === this.commenterId)[0].name.fullName();
               },
               body: 'nice',
               replies: [
@@ -443,7 +560,24 @@ const data = {
         fullName() { return (`${this.first} ${this.last}`); },
       },
       online: false,
-      profilePictureID: images.profilePicture10sm,
+      profilePictureID: [
+        images.profilePicture10sm, images.profilePicture10md, images.profilePicture10bg,
+      ],
+      profile: {
+        coverPhoto: images.coverPhoto5,
+        description: 'Hello friends, Nice to meet you.',
+        userInformation: {
+          country: { val: 'Zambia', public: true },
+          state: { val: 'Lusaka' },
+          city: { val: 'Lusaka' },
+          relationship: { val: 'Single', public: true },
+          dob: { val: '12/04/199', public: false },
+          friends: { val: 273, public: true },
+          followers: { val: 113, public: true },
+          following: { val: 86, public: true },
+          gender: { val: 'Male', public: true },
+        },
+      },
       posts: [
         {
           userId: 10,
@@ -461,7 +595,7 @@ const data = {
               commentDate: new Date(2023, 2, 9, 11, 10, 0),
               commenterId: 7,
               commenterName() {
-                data.users.filter((i) => i.userId === this.commenterId)[0].name.fullName();
+                return data.users.filter((i) => i.userId === this.commenterId)[0].name.fullName();
               },
               body: 'Things look rosey from the outside looking in 🤷🏾‍♀️😂',
               replies: [
@@ -488,7 +622,24 @@ const data = {
         fullName() { return (`${this.first} ${this.last}`); },
       },
       online: true,
-      profilePictureID: images.profilePicture11sm,
+      profilePictureID: [
+        images.profilePicture11sm, images.profilePicture11bg, images.profilePicture11bg,
+      ],
+      profile: {
+        coverPhoto: images.coverPhoto6,
+        description: 'Hello friends, Nice to meet you.',
+        userInformation: {
+          country: { val: 'Zambia', public: true },
+          state: { val: 'Lusaka' },
+          city: { val: 'Lusaka' },
+          relationship: { val: 'Single', public: true },
+          dob: { val: '12/04/199', public: false },
+          friends: { val: 273, public: true },
+          followers: { val: 113, public: true },
+          following: { val: 86, public: true },
+          gender: { val: 'Male', public: true },
+        },
+      },
       posts: [
         {
           userId: 11,
@@ -511,7 +662,7 @@ const data = {
               commentDate: new Date(2023, 2, 9, 11, 10, 0),
               commenterId: 3,
               commenterName() {
-                data.users.filter((i) => i.userId === this.commenterId)[0].name.fullName();
+                return data.users.filter((i) => i.userId === this.commenterId)[0].name.fullName();
               },
               body: 'nice',
               replies: [

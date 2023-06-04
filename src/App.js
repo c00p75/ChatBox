@@ -1,11 +1,17 @@
 import './App.css';
-import Home from './pages/Home/Home';
+import Topbar from './components/topbar/Topbar';
+import ProfilePage from './pages/profilePage/ProfilePage';
+// import Home from './pages/Home/Home';
 
 function App() {
   return (
-    <div>
-      <Home />
-    </div>
+    <>
+      <Topbar />
+      <div>
+        {/* <Home /> */}
+        <ProfilePage />
+      </div>
+    </>
   );
 }
 

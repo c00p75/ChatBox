@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { useSelector } from 'react-redux';
 import { BsSearch, BsPersonFill, BsFillChatLeftTextFill } from 'react-icons/bs';
 import { MdNotifications, MdOutlineViewTimeline } from 'react-icons/md';
 import { AiFillHome } from 'react-icons/ai';
@@ -13,9 +14,12 @@ const Topbar = () => {
   const [scrollPosition, setScrollPosition] = useState(200);
   const [disableBtn, setDisableBtn] = useState(false);
 
+  const userId = useSelector((state) => state.profile.userId);
+  const user = data.users.filter((i) => i.userId === userId)[0];
+
   const handleMenu = () => {
     // Toggle menu every time button is clicked
-    document.querySelector('.home__topbar-bottom').classList.toggle('slider');
+    document.querySelector('.topbar__bottom').classList.toggle('slider');
 
     setShowMenu(!showMenu);
     if (!showMenu) {
@@ -41,79 +45,79 @@ const Topbar = () => {
 
   return (
     <nav className={`app_navigation ${theme}`}>
-      <div className="home__topbar">
-        <div className="home__topbar-left">
-          <div className="home__topbar-left__logo">
-            <h1 className="home__topbar-left__logo-text pointer flex" style={{ width: 'fit-content' }}>
+      <div className="topbar">
+        <div className="topbar__left">
+          <div className="topbar__left-logo">
+            <h1 className="topbar__left-logo__text flex" style={{ width: 'fit-content' }}>
               <img src={images.logo} alt="app logo" />
               <span style={{ color: 'white' }}>Chat</span>
               <span style={{ color: 'khaki' }}>Box</span>
             </h1>
           </div>
         </div>
-        <div className="home__topbar-center flex-center">
+        <div className="topbar__center flex-center">
           <BsSearch />
-          <input type="text" placeholder="Search..." className="home__topbar-center_searchInput" />
+          <input type="text" placeholder="Search..." className="topbar__center-searchInput" />
         </div>
-        <div className="home__topbar-right flex">
-          <ul className="home__topbar-right_links flex-evenly">
-            <li className="home__topbar-right_link pointer">
+        <div className="topbar__right flex">
+          <ul className="topbar__right-links flex-evenly">
+            <li className="topbar__right-link">
               <span className="lg-screen">Home Page</span>
               <span className="sm-screen"><AiFillHome style={{ fontSize: '1.5em' }} /></span>
             </li>
-            <li className="home__topbar-right_link pointer">
+            <li className="topbar__right-link">
               <span className="lg-screen">Timeline</span>
               <span className="sm-screen"><MdOutlineViewTimeline style={{ fontSize: '1.5em' }} /></span>
             </li>
-            <li className="home__topbar-right_link">
-              <ul className="home__topbar-right_icons flex-evenly">
-                <li className="home__topbar-right_icon pointer">
+            <li className="topbar__right-link">
+              <ul className="topbar__right-icons flex-evenly">
+                <li className="topbar__right-icon">
                   <BsPersonFill />
-                  <span className="home__topbar-right_iconBadge flex-center">1</span>
+                  <span className="topbar__right-iconBadge flex-center">1</span>
                 </li>
-                <li className="home__topbar-right_icon pointer">
+                <li className="topbar__right-icon">
                   <BsFillChatLeftTextFill style={{ fontSize: '1.2em' }} />
-                  <span className="home__topbar-right_iconBadge flex-center">2</span>
+                  <span className="topbar__right-iconBadge flex-center">2</span>
                 </li>
-                <li className="home__topbar-right_icon pointer">
+                <li className="topbar__right-icon">
                   <MdNotifications />
-                  <span className="home__topbar-right_iconBadge flex-center">1</span>
+                  <span className="topbar__right-iconBadge flex-center">1</span>
                 </li>
               </ul>
             </li>
-            <li className="home__topbar-right_link-menu">
+            <li className="topbar__right-link__menu">
               <button type="button" onClick={handleMenu} disabled={disableBtn}>
                 <TiThMenu style={{ fontSize: '1.2em' }} />
               </button>
             </li>
-            <li className="home__topbar-right_img pointer">
-              <img src={data.userProfile.profilePictureID} alt="profile pic" className="small-profile-pic" />
+            <li className="topbar__right-img">
+              <img src={user.profilePictureID[0]} alt="profile pic" className="small-profile-pic" />
             </li>
           </ul>
         </div>
       </div>
 
-      <div className={`home__topbar-bottom slider ${theme}`}>
-        <div className="home__topbar-center flex-center">
+      <div className={`topbar__bottom slider ${theme}`}>
+        <div className="topbar__center flex-center">
           <BsSearch />
-          <input type="text" placeholder="Search..." className="home__topbar-center_searchInput" />
+          <input type="text" placeholder="Search..." className="topbar__center-searchInput" />
         </div>
-        <div className="home__topbar-bottom_link flex">
-          <ul className="home__topbar-bottom_icons">
-            <li className="home__topbar-right_icon pointer">
+        <div className="topbar__bottom-link flex">
+          <ul className="topbar__bottom-icons">
+            <li className="topbar__right-icon">
               <BsPersonFill />
               <span style={{ marginLeft: '0.5em' }}>Friends</span>
-              <span className="home__topbar-right_iconBadge flex-center">1</span>
+              <span className="topbar__right-iconBadge flex-center">1</span>
             </li>
-            <li className="home__topbar-right_icon pointer">
+            <li className="topbar__right-icon">
               <BsFillChatLeftTextFill style={{ fontSize: '1.2em' }} />
               <span style={{ marginLeft: '0.5em' }}>Messeges</span>
-              <span className="home__topbar-right_iconBadge flex-center">2</span>
+              <span className="topbar__right-iconBadge flex-center">2</span>
             </li>
-            <li className="home__topbar-right_icon pointer">
+            <li className="topbar__right-icon">
               <MdNotifications />
               <span style={{ marginLeft: '0.5em' }}>Notifications</span>
-              <span className="home__topbar-right_iconBadge flex-center">1</span>
+              <span className="topbar__right-iconBadge flex-center">1</span>
             </li>
           </ul>
           <SidebarLinks />

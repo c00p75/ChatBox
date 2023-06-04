@@ -37,7 +37,7 @@ const Post = ({ post }) => {
       <div className="post__wrapper">
         <div className="post__top flex">
           <div className="post__top_left flex">
-            <img src={user.profilePictureID} alt="profile pic" className="small-profile-pic pointer" />
+            <img src={user.profilePictureID[0]} alt="profile pic" className="small-profile-pic pointer" />
             <span className="post__username pointer">{user.name.fullName()}</span>
             <span className="post__date">5 minutes ago</span>
           </div>
@@ -98,6 +98,7 @@ const Post = ({ post }) => {
             </div>
           </div>
           <div className={!showComments ? 'hide' : ''}>
+            <h5 className="comments__heading">{`Comments (${post.comments.length})`}</h5>
             {post.comments.map((comment, index) => (<Comments comment={comment} key={`id_${index + 1}`} />))}
           </div>
         </div>
