@@ -1,0 +1,99 @@
+form { padding: 0 2em; }
+
+nav { border-bottom: 1px solid rgb(220, 220, 220, 0.6); }
+
+fieldset { border: 0; }
+
+legend {
+  font-size: 1.2em;
+  font-weight: 600;
+  margin: auto;
+  padding-top: 1em;
+  padding-bottom: 0.5em;
+}
+
+nav,
+.popupModal__modal-header { background-color: rgb(220, 220, 220, 30%); }
+
+.popupModal__modal-container__content {
+  padding: 0 !important;
+}
+
+.settings__nav { padding: 0 1em; }
+
+.settings__nav button {
+  font-size: 1.1em;
+  padding: 1em;
+  color: gray;
+}
+
+.settings__nav li:first-child {
+  margin-right: 1em;
+}
+
+.active {
+  border-bottom: 4px solid royalblue;
+  border-bottom-left-radius: 3px;
+  border-bottom-right-radius: 3px;
+  color: black !important;
+}
+
+.field {
+  display: grid;
+  grid-template-columns: auto auto;
+  column-gap: 2em;
+  padding: 0 10px;
+}
+
+.social {
+  border-collapse: collapse;
+}
+
+.field__item {
+  flex-direction: column;
+}
+
+.field__item label {
+  font-weight: 500;
+  color: darkslategrey;
+  margin-top: 1em;
+}
+
+.field__item input {
+  border: 1px solid gainsboro;
+  border-radius: 2px;
+  margin-top: 1em;
+  padding: 1em;
+  outline-color: aquamarine;
+  font-size: 0.95em;
+}
+
+.social td {
+  border: 1px solid gainsboro;
+}
+
+.social input {
+  border: 0;
+  margin-top: 0;
+}
+
+.social input:focus + td {
+  border: 2px solid aquamarine !important;
+}
+
+@media screen and (max-width: 768px) {
+  .field {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .settings__nav {
+    justify-content: space-evenly;
+  }
+
+  .settings__nav li:first-child {
+    margin-right: 0;
+  }
+}

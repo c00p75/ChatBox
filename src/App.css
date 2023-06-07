@@ -19,6 +19,8 @@ button {
   cursor: pointer;
 }
 
+ul { list-style: none; }
+
 .theme-color1 {
   background-color: var(--theme-color1);
 }

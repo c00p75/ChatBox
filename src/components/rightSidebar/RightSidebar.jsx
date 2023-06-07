@@ -3,11 +3,11 @@ import { useState } from 'react';
 import { PropTypes } from 'prop-types';
 import { BiHide, BiShow } from 'react-icons/bi';
 import { MdOutlineEdit } from 'react-icons/md';
+import FriendsList from '../friendsList/FriendsList';
+import Settings from '../settings/Settings';
 import data from '../../constants/data';
 import images from '../../constants/images';
 import Ads from '../ads/Ads';
-import FriendsList from '../friendsList/FriendsList';
-import AboutEdit from '../aboutEdit/AboutEdit';
 import './rightSidebar.css';
 
 const RightSidebar = ({ page, user }) => {
@@ -66,7 +66,7 @@ const RightSidebar = ({ page, user }) => {
               )}
             </h1>
 
-            <AboutEdit />
+            <Settings set="user" />
 
             <div className={`rightSidebar__userInfo-item ${!userAccess && !publicLocation ? 'hide' : ''}`}>
               {userAccess && (
