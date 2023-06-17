@@ -1,15 +1,19 @@
-form { padding: 0 2em; }
+form { padding: 1em 2em; }
 
 nav { border-bottom: 1px solid rgb(220, 220, 220, 0.6); }
 
-fieldset { border: 0; }
+fieldset {
+  padding-bottom: 1em;
+  border: 0;
+}
 
-legend {
-  font-size: 1.2em;
-  font-weight: 600;
-  margin: auto;
-  padding-top: 1em;
-  padding-bottom: 0.5em;
+form button {
+  margin: 1em;
+  margin-bottom: 0;
+  background: royalblue;
+  padding: 1em 3em;
+  color: white;
+  border-radius: 5px;
 }
 
 nav,
@@ -25,6 +29,10 @@ nav,
   font-size: 1.1em;
   padding: 1em;
   color: gray;
+}
+
+form button:hover {
+  background-color: darkcyan;
 }
 
 .settings__nav li:first-child {
@@ -47,17 +55,22 @@ nav,
 
 .social {
   border-collapse: collapse;
+  border: 1px solid gainsboro;
+  margin-top: 1em;
+  padding: 1em;
 }
 
 .field__item {
   flex-direction: column;
 }
 
-.field__item label {
+fieldset label {
   font-weight: 500;
   color: darkslategrey;
   margin-top: 1em;
 }
+
+.social-label { padding: 0 1em; }
 
 .field__item input {
   border: 1px solid gainsboro;
@@ -66,19 +79,36 @@ nav,
   padding: 1em;
   outline-color: aquamarine;
   font-size: 0.95em;
-}
-
-.social td {
-  border: 1px solid gainsboro;
+  height: 100%;
 }
 
 .social input {
   border: 0;
   margin-top: 0;
+  width: 100%;
 }
 
-.social input:focus + td {
+.social input:focus {
+  outline: none;
+}
+
+.social:focus-within {
   border: 2px solid aquamarine !important;
+}
+
+.social img {
+  height: 2em;
+  width: 2em;
+  margin-left: 0.5em;
+}
+
+.line {
+  height: 2px;
+  background-color: gainsboro;
+  width: 50%;
+  margin: auto;
+  margin-top: 1.5em;
+  margin-bottom: 0.5em;
 }
 
 @media screen and (max-width: 768px) {

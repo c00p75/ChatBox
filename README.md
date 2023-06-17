@@ -1,5 +1,5 @@
 * This is a social media app build with react and javascript on the front-end and takes NoSQL approach with NodeJS on the backend.
-* One of the main goals of this project was to build an interesting application with minimum dependencies and external libraries.
+* One of the main goals of this project was to build an interesting application with minimum dependencies and external libraries. The app does not use any react ui library.
   So far, the tech stack of the project is comprised only of html, css, vanilla js, react, and redux on the frontend.
 
 # Getting Started with Create React App

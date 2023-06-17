@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { PropTypes } from 'prop-types';
 import PopupModal from '../popupModal/PopupModal';
 import AboutEdit from './AboutEdit';
 import ProfileEdit from './ProfileEdit';
@@ -20,8 +21,13 @@ const SettingsPopup = () => {
   );
 };
 
-const Settings = () => (
-  <PopupModal title="Edit Profile" jsx={<SettingsPopup />} />
+const Settings = ({ display, handleDisplay }) => (
+  <PopupModal title="Edit Profile" jsx={<SettingsPopup />} display={display} handleDisplay={handleDisplay} />
 );
 
 export default Settings;
+
+Settings.propTypes = {
+  display: PropTypes.bool.isRequired,
+  handleDisplay: PropTypes.func.isRequired,
+};

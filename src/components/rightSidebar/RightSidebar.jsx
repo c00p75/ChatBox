@@ -20,6 +20,7 @@ const RightSidebar = ({ page, user }) => {
   const [publicFollowers, setFollowers] = useState(user.profile.userInformation.followers.public);
   const [publicFollowing, setFollowing] = useState(user.profile.userInformation.dob.public);
   const [publicGender, setPublicGender] = useState(user.profile.userInformation.gender.public);
+  const [edit, setEdit] = useState(false);
 
   return (
     <div className="home__rightSidebar">
@@ -60,13 +61,13 @@ const RightSidebar = ({ page, user }) => {
               {' '}
               {user.name.first}
               {userAccess && (
-              <button type="button" className="rightSidebar__userInfo-item_value-edit" onClick={() => console.log('edit')}>
+              <button type="button" className="rightSidebar__userInfo-item_value-edit" onClick={() => setEdit(true)}>
                 <MdOutlineEdit />
               </button>
               )}
             </h1>
 
-            <Settings set="user" />
+            <Settings set="user" display={edit} handleDisplay={setEdit} />
 
             <div className={`rightSidebar__userInfo-item ${!userAccess && !publicLocation ? 'hide' : ''}`}>
               {userAccess && (

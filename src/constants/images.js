@@ -19,6 +19,10 @@ import friends from '../assets/icons/friends.png';
 import followers from '../assets/icons/followers.png';
 import following from '../assets/icons/following.png';
 import gender from '../assets/icons/gender.png';
+import twitter from '../assets/icons/twitter.png';
+import facebook from '../assets/icons/facebook.png';
+import instagram from '../assets/icons/instagram.png';
+import tiktok from '../assets/icons/tiktok.png';
 import advertisement1 from '../assets/ads/ad1.jpg';
 import advertisement2 from '../assets/ads/ad2.png';
 import advertisement3 from '../assets/ads/ad3.png';
@@ -103,6 +107,10 @@ export default {
   followers,
   following,
   gender,
+  twitter,
+  facebook,
+  instagram,
+  tiktok,
   advertisement1,
   advertisement2,
   advertisement3,

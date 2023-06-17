@@ -1,6 +1,6 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
-import { BsTwitter } from 'react-icons/bs';
-import { GrFacebook } from 'react-icons/gr';
+
+import images from '../../constants/images';
 
 const ProfileEdit = () => (
   <form>
@@ -26,32 +26,47 @@ const ProfileEdit = () => (
             <label htmlFor="confirmemail">Confirm Email Address </label>
             <input type="email" id="confirmemail" name="confirmemail" />
           </div>
+        </div>
+      </fieldset>
 
-          <div className="field__item flex">
-            <label>Social Profile </label>
-            <table className="social">
+      <fieldset>
+        <label className="social-label">Social Profiles </label>
+        <div className="field">
+          <table className="social field__item">
+            <tbody>
               <tr>
-                <td><BsTwitter color="deepskyblue" /></td>
+                <td><img src={images.twitter} alt="twitter" /></td>
                 <td><input type="text" id="twitter" name="twitter" /></td>
               </tr>
-            </table>
+            </tbody>
+          </table>
 
-            <div className="social">
-              <span>Add face book, insta, and tiktok</span>
-              <span><GrFacebook color="deepskyblue" /></span>
-              <input type="text" id="facebook" name="facebook" />
-            </div>
+          <table className="social field__item">
+            <tbody>
+              <tr>
+                <td><img src={images.facebook} alt="twitter" /></td>
+                <td><input type="text" id="facebook" name="facebook" /></td>
+              </tr>
+            </tbody>
+          </table>
 
-            <div className="social">
-              <span><BsTwitter color="deepskyblue" /></span>
-              <input type="text" id="instagram" name="instagram" />
-            </div>
+          <table className="social field__item">
+            <tbody>
+              <tr>
+                <td><img src={images.instagram} alt="twitter" /></td>
+                <td><input type="text" id="instagram" name="instagram" /></td>
+              </tr>
+            </tbody>
+          </table>
 
-            <div className="social">
-              <span><GrFacebook color="deepskyblue" /></span>
-              <input type="text" id="tiktok" name="tiktok" />
-            </div>
-          </div>
+          <table className="social field__item">
+            <tbody>
+              <tr>
+                <td><img src={images.tiktok} alt="twitter" /></td>
+                <td><input type="text" id="tiktok" name="tiktok" /></td>
+              </tr>
+            </tbody>
+          </table>
         </div>
       </fieldset>
     </div>

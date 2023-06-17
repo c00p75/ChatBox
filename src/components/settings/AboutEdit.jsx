@@ -3,7 +3,6 @@
 const AboutEdit = () => (
   <form>
     <fieldset>
-      <legend>Bio</legend>
       <div className="field">
         <div className="field__item flex">
           <label htmlFor="firstname">First Name</label>
@@ -37,8 +36,9 @@ const AboutEdit = () => (
       </div>
     </fieldset>
 
+    <div className="line" />
+
     <fieldset>
-      <legend>Location</legend>
       <div className="field">
         <div className="field__item flex">
           <label htmlFor="gender">Country</label>
@@ -57,7 +57,7 @@ const AboutEdit = () => (
       </div>
     </fieldset>
     <div>
-      <button type="submit">Update</button>
+      <button type="submit">Save changes</button>
     </div>
   </form>
 );
