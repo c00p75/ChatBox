@@ -1,6 +1,7 @@
 .profile {
   flex: 3.6;
   flex-direction: column;
+  background-color: ghostwhite;
 }
 
 .profile__top-coverPhoto {
@@ -35,7 +36,10 @@
 
 .profile__bottom { padding: 1em; }
 
-.profile__bottom-feed { flex: 2.6; }
+.profile__bottom-feed {
+  flex: 2.6;
+  background-color: white;
+}
 
 .profile__bottom-rightbar { flex: 1.2; }
 
