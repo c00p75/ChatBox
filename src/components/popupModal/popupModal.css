@@ -8,13 +8,14 @@
   color: black;
 }
 
-.popupModal__modal-background {
+.popupModal__overlay {
   position: absolute;
   background-color: rgb(0, 0, 0, 0.7);
   backdrop-filter: blur(5px);
   -webkit-backdrop-filter: blur(5px);
   height: 100%;
   width: 100%;
+  cursor: auto;
 }
 
 .popupModal__modal {

@@ -11,8 +11,6 @@ import SidebarLinks from '../leftSidebar/SidebarLinks';
 
 const Topbar = () => {
   const [showMenu, setShowMenu] = useState(false);
-  const [scrollPosition, setScrollPosition] = useState(200);
-  const [disableBtn, setDisableBtn] = useState(false);
 
   const userId = useSelector((state) => state.profile.userId);
   const user = data.users.filter((i) => i.userId === userId)[0];
@@ -20,25 +18,13 @@ const Topbar = () => {
   const handleMenu = () => {
     // Toggle menu every time button is clicked
     document.querySelector('.topbar__bottom').classList.toggle('slider');
+    const body = document.querySelector('body');
 
     setShowMenu(!showMenu);
     if (!showMenu) {
-      // Store scroll position before no-scroll is enabled.
-      setScrollPosition(window.pageYOffset);
-
-      // Disable button when clicked
-      setDisableBtn(true);
-
-      // Add no scroll a few mili seconds after slider appears then enable the menu button
-      setTimeout(() => {
-        document.querySelector('.app__homeContainer').classList.add('no-scroll');
-        setDisableBtn(false);
-      }, 200);
+      body.classList.add('no-scroll');
     } else {
-      // remove no-scroll
-      document.querySelector('.app__homeContainer').classList.remove('no-scroll');
-      // Return to initial scroll possition a few mili seconds after no-scroll is removed from body
-      setTimeout(() => window.scrollTo(0, scrollPosition), 10);
+      body.classList.remove('no-scroll');
     }
   };
   const theme = 'theme-color2';
@@ -86,7 +72,7 @@ const Topbar = () => {
               </ul>
             </li>
             <li className="topbar__right-link__menu">
-              <button type="button" onClick={handleMenu} disabled={disableBtn}>
+              <button type="button" onClick={handleMenu}>
                 <TiThMenu style={{ fontSize: '1.2em' }} />
               </button>
             </li>
@@ -96,6 +82,8 @@ const Topbar = () => {
           </ul>
         </div>
       </div>
+
+      {/* Mobile Menu */}
 
       <div className={`topbar__bottom slider ${theme}`}>
         <div className="topbar__center flex-center">

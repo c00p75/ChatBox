@@ -22,7 +22,11 @@ const SettingsPopup = () => {
 };
 
 const Settings = ({ display, handleDisplay }) => (
-  <PopupModal title="Edit Profile" jsx={<SettingsPopup />} display={display} handleDisplay={handleDisplay} />
+  <>
+    {display && (
+    <PopupModal title="Edit Profile" jsx={<SettingsPopup />} display={display} handleDisplay={handleDisplay} />
+    )}
+  </>
 );
 
 export default Settings;
