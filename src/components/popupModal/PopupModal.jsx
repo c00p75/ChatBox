@@ -35,7 +35,6 @@ const PopupModal = ({ title, jsx, handleDisplay }) => {
 PopupModal.propTypes = {
   title: PropTypes.string.isRequired,
   jsx: PropTypes.element.isRequired,
-
   handleDisplay: PropTypes.func.isRequired,
 };
 
