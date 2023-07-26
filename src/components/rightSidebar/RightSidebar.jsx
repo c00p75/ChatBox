@@ -12,7 +12,7 @@ import './rightSidebar.css';
 
 const RightSidebar = ({ page, user }) => {
   const userId = useSelector((state) => state.profile.userId);
-  const userAccess = userId === user.userId;
+  const userAccess = (userId === user.userId);
   const [publicLocation, setPublicLocation] = useState(user.profile.userInformation.country.public);
   const [publicRel, setPublicRel] = useState(user.profile.userInformation.relationship.public);
   const [publicDob, setPublicDob] = useState(user.profile.userInformation.dob.public);

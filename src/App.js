@@ -1,16 +1,18 @@
-import './App.css';
+/* eslint-disable import/no-extraneous-dependencies */
+import { Route, Routes } from 'react-router-dom';
 import Topbar from './components/topbar/Topbar';
 import ProfilePage from './pages/profilePage/ProfilePage';
-// import Home from './pages/Home/Home';
+import Home from './pages/Home/Home';
+import './App.css';
 
 function App() {
   return (
     <>
       <Topbar />
-      <div>
-        {/* <Home /> */}
-        <ProfilePage />
-      </div>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/profile" element={<ProfilePage />} />
+      </Routes>
     </>
   );
 }
