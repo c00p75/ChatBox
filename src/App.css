@@ -99,7 +99,6 @@ ul { list-style: none; }
 }
 
 .no-scroll {
-  /* position: fixed; */
   overflow: hidden;
 }
 

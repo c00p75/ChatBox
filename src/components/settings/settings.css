@@ -93,7 +93,8 @@ fieldset label {
 }
 
 .social:focus-within {
-  border: 2px solid aquamarine !important;
+  border-color: aquamarine;
+  box-shadow: 0 0 0 1px aquamarine !important;
 }
 
 .social img {

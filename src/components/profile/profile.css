@@ -46,6 +46,7 @@
 .profile__bottom-rightbar > div {
   display: flex;
   justify-content: center;
+  padding-left: 2em;
 }
 
 @media screen and (max-width: 768px) {

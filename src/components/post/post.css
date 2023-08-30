@@ -111,10 +111,11 @@
   width: 100%;
   transition: 0.3s;
   object-fit: cover;
+  transform: scale(1.08);
 }
 
 .post-Img:hover {
-  transform: scale(1.08);
+  transform: scale(1);
 }
 
 .post__bottom-main {

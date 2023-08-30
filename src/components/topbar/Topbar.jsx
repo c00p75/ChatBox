@@ -1,8 +1,9 @@
+/* eslint-disable jsx-a11y/no-noninteractive-element-to-interactive-role */
 import { useState } from 'react';
 import { useSelector } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 import { BsSearch, BsPersonFill, BsFillChatLeftTextFill } from 'react-icons/bs';
 import { MdNotifications, MdOutlineViewTimeline } from 'react-icons/md';
-import { AiFillHome } from 'react-icons/ai';
 import { TiThMenu } from 'react-icons/ti';
 import images from '../../constants/images';
 import './topbar.css';
@@ -11,6 +12,7 @@ import SidebarLinks from '../leftSidebar/SidebarLinks';
 
 const Topbar = () => {
   const [showMenu, setShowMenu] = useState(false);
+  const navigate = useNavigate();
 
   const userId = useSelector((state) => state.profile.userId);
   const user = data.users.filter((i) => i.userId === userId)[0];
@@ -47,13 +49,15 @@ const Topbar = () => {
         </div>
         <div className="topbar__right flex">
           <ul className="topbar__right-links flex-evenly">
-            <li className="topbar__right-link">
-              <span className="lg-screen">Home Page</span>
-              <span className="sm-screen"><AiFillHome style={{ fontSize: '1.5em' }} /></span>
-            </li>
-            <li className="topbar__right-link">
-              <span className="lg-screen">Timeline</span>
-              <span className="sm-screen"><MdOutlineViewTimeline style={{ fontSize: '1.5em' }} /></span>
+            <li
+              className="topbar__right-link topbar__right-icon"
+              role="button"
+              tabIndex={0}
+              onClick={() => navigate('/')}
+              onKeyDown={(e) => { if (e.key === 'Enter') { navigate('/'); } }}
+            >
+              <MdOutlineViewTimeline style={{ fontSize: '1.5em' }} />
+              <span className="topbar__right-iconBadge flex-center">13</span>
             </li>
             <li className="topbar__right-link">
               <ul className="topbar__right-icons flex-evenly">
@@ -76,7 +80,13 @@ const Topbar = () => {
                 <TiThMenu style={{ fontSize: '1.2em' }} />
               </button>
             </li>
-            <li className="topbar__right-img">
+            <li
+              className="topbar__right-img"
+              role="button"
+              tabIndex={0}
+              onClick={() => navigate('/profile')}
+              onKeyDown={(e) => { if (e.key === 'Enter') { navigate('/profile'); } }}
+            >
               <img src={user.profilePictureID[0]} alt="profile pic" className="small-profile-pic" />
             </li>
           </ul>

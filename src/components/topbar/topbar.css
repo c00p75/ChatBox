@@ -68,13 +68,16 @@
   align-items: center;
 }
 
-.topbar__right-links > * { margin-right: 1.5em; }
+.topbar__right-links > * { margin: 0 0.5em; }
 
-.topbar__right-links > *:last-child { margin: 0; }
+.topbar__right-links > *:last-child { margin-left: 1em; }
 
 .topbar__right-icons { gap: 0.8em; }
 
-.topbar__right-icon { position: relative; }
+.topbar__right-icon {
+  position: relative;
+  cursor: pointer;
+}
 
 .topbar__right-icon svg { font-size: 1.4em; }
 
@@ -95,6 +98,8 @@
 }
 
 .topbar__bottom { display: none; }
+
+.topbar__right-img { cursor: pointer; }
 
 @media screen and (max-width: 768px) {
   .topbar__left {

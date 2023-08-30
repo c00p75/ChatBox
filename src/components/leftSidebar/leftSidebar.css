@@ -1,5 +1,4 @@
 .home__sidebar {
-  flex: 1;
   height: calc(100vh - 4em);
   overflow: auto;
   border-right: 1px solid gainsboro;
